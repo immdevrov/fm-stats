@@ -1,0 +1,21 @@
+{
+  "name": "fm_stats",
+  "version": "1.0.0",
+  "description": "Football Manager 24 CSV stats parser",
+  "main": "dist/src/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/src/index.js",
+    "process": "npm run build && node dist/src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "csv-parse": "^5.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.5",
+    "typescript": "^5.7.3"
+  }
+}
