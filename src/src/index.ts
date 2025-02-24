@@ -2,6 +2,7 @@ import { filterByContractExpiryDate } from "./fields/expires";
 import { readCsvFile, parsePlayerStats } from "./parser";
 import { CentralDefenderProcessor } from "./roles/central-defender";
 import { GoalKeeperProcessor } from "./roles/goalkeeper";
+import { StrikersProcessor } from "./roles/striker";
 
 function getCurrentDateFromFilePath(filePath: string) {
   const dateRegex = /(\d{2}_\d{2}_\d{4})\.csv$/;
@@ -41,6 +42,8 @@ function main() {
     cdProcessor.print(cdProcessor.filter());
     const gkProcessor = new GoalKeeperProcessor(dateFilteredPlayers);
     gkProcessor.print(gkProcessor.filter());
+    const stProcessor = new StrikersProcessor(dateFilteredPlayers);
+    stProcessor.print(stProcessor.filter());
   } catch (error) {
     console.error("Error:", (error as Error).message);
     process.exit(1);

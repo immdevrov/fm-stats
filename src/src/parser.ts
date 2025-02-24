@@ -94,7 +94,7 @@ export function parsePlayerStats(csvContent: string): Player[] {
         PossWonPer90: Number(record["Poss Won/90"]),
         PossLostPer90: Number(record["Poss Lost/90"]),
         SprintsPer90: Number(record["Sprints/90"]),
-        DrbPer90: Number(record["Drb/90"]),
+        DrbPer90: record["Drb/90"] === "-" ? 0 : Number(record["Drb/90"]),
         DistPer90: record["Dist/90"],
         PresCPer90: Number(record["Pres C/90"]),
         PresAPer90: Number(record["Pres A/90"]),
