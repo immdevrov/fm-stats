@@ -8,6 +8,8 @@ interface ICentralDefender extends IRole {
   mistakes: number;
   tackleRating: number;
   tacklesPer90: number;
+  progressivePassesPer90: number;
+  passesPercent: number;
   headersWonRatio: number;
   arealAttempsPer90: number;
   posessionWonPer90: number;
@@ -41,12 +43,14 @@ export class CentralDefenderProcessor {
         name,
         nat,
         mistakes,
-        arealAttempsPer90: ArealAttPer90,
+        progressivePassesPer90: prPass,
+        passesPercent,
+        arealAttempsPer90: ArealAttps,
         headersWonRatio: hdrsWonRatio,
-        tacklesPer90,
-        tackleRating,
-        posessionLostPer90: posLostPer90,
-        posessionWonPer90: posWonPer90,
+        tacklesPer90: tclks,
+        tackleRating: tclsR,
+        posessionLostPer90: posLost,
+        posessionWonPer90: posWon,
         contractExpires,
         wage,
       } = g;
@@ -55,12 +59,14 @@ export class CentralDefenderProcessor {
         name,
         nat,
         mistakes,
-        ArealAttPer90,
+        ArealAttps,
         hdrsWonRatio,
-        tacklesPer90,
-        tackleRating,
-        posLostPer90,
-        posWonPer90,
+        "pass%": passesPercent,
+        prPass,
+        tclks,
+        tclsR,
+        posLost,
+        posWon,
         wage: wage ? formatWage(wage) : null,
         contractExpires: contractExpires ? displayDate(contractExpires) : null,
       };
@@ -89,6 +95,14 @@ export class CentralDefender extends Role implements ICentralDefender {
 
   get tackleRating() {
     return this.player.TckR;
+  }
+
+  get progressivePassesPer90() {
+    return this.player.PrPassesPer90;
+  }
+
+  get passesPercent() {
+    return this.player.PasPercentage;
   }
 
   get tacklesPer90() {

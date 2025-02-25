@@ -74,8 +74,8 @@ export function parsePlayerStats(csvContent: string): Player[] {
         PrPassesPer90: Number(record["Pr passes/90"]),
         OPKPPer90: Number(record["OP-KP/90"] || 0),
         ChCPer90: Number(record["Ch C/90"] || 0),
-        OPCrPercentage: Number((record["OP-Cr %"] || "0").replace("%", "")),
-        OPCrsCPer90: Number(record["OP-Crs C/90"] || 0),
+        OPCrPercentage: processHyphen(record["OP-Cr %"], parseFloat),
+        OPCrsCPer90: processHyphen(record["OP-Crs C/90"], parseFloat),
         ConvPercentage: Number((record["Conv %"] || "0").replace("%", "")),
         xGOP: Number(record["xG-OP"] || 0),
         ShTPer90: Number(record["ShT/90"]),
@@ -110,9 +110,6 @@ export function parsePlayerStats(csvContent: string): Player[] {
   };
 
   return records.map((record: any) => {
-    if (record.Name === "Keenan Samuels") {
-      console.log("1");
-    }
     return processRecord(record);
   });
 }

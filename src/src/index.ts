@@ -1,6 +1,7 @@
 import { filterByContractExpiryDate } from "./fields/expires";
 import { readCsvFile, parsePlayerStats } from "./parser";
 import { CentralDefenderProcessor } from "./roles/central-defender";
+import { FullbackProcessor } from "./roles/fullback";
 import { GoalKeeperProcessor } from "./roles/goalkeeper";
 import { StrikersProcessor } from "./roles/striker";
 
@@ -37,6 +38,7 @@ function main() {
       currentDate: date,
       options: "THREE_MONTHS",
     });
+    console.log(`${dateFilteredPlayers.length} players on short contract`);
 
     const cdProcessor = new CentralDefenderProcessor(dateFilteredPlayers);
     cdProcessor.print(cdProcessor.filter());
@@ -44,6 +46,8 @@ function main() {
     gkProcessor.print(gkProcessor.filter());
     const stProcessor = new StrikersProcessor(dateFilteredPlayers);
     stProcessor.print(stProcessor.filter());
+    const fbProcessor = new FullbackProcessor(dateFilteredPlayers);
+    fbProcessor.print(fbProcessor.filter());
   } catch (error) {
     console.error("Error:", (error as Error).message);
     process.exit(1);
