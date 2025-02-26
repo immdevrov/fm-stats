@@ -1,6 +1,7 @@
 import { filterByContractExpiryDate } from "./fields/expires";
 import { readCsvFile, parsePlayerStats } from "./parser";
 import { CentralDefenderProcessor } from "./roles/central-defender";
+import { DefensiveMidfilderProcessor } from "./roles/defensive-midfilder";
 import { FullbackProcessor } from "./roles/fullback";
 import { GoalKeeperProcessor } from "./roles/goalkeeper";
 import { StrikersProcessor } from "./roles/striker";
@@ -34,11 +35,17 @@ function main() {
     console.log(`Successfully loaded ${players.length} players`);
 
     const date = getCurrentDateFromFilePath(filePath);
-    const dateFilteredPlayers = filterByContractExpiryDate({
-      players,
-      currentDate: date,
-      options: "THREE_MONTHS",
-    });
+    const alreadySignedForNextyear = players.filter((p) =>
+      [12092862].includes(p.UID)
+    );
+    const dateFilteredPlayers = [
+      filterByContractExpiryDate({
+        players,
+        currentDate: date,
+        options: "THREE_MONTHS",
+      }),
+      alreadySignedForNextyear,
+    ].flat();
     console.log(`${dateFilteredPlayers.length} players on short contract`);
 
     const cdProcessor = new CentralDefenderProcessor(dateFilteredPlayers);
@@ -51,6 +58,8 @@ function main() {
     fbProcessor.print(fbProcessor.filter());
     const wgProcessor = new WingerProcessor(dateFilteredPlayers);
     wgProcessor.print(wgProcessor.filter());
+    const dmProcessor = new DefensiveMidfilderProcessor(dateFilteredPlayers);
+    dmProcessor.print(dmProcessor.filter());
   } catch (error) {
     console.error("Error:", (error as Error).message);
     process.exit(1);

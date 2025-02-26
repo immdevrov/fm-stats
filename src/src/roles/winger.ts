@@ -34,15 +34,12 @@ export class WingerProcessor {
   filter() {
     const filterMap: filterMap<Winger> = {
       noInjuriesFilter: (d: Winger) => !d.injuries,
-      // headerRatioFilter: (d: Winger) => d.headersWonRatio >= 70,
-      // tacklesRationFilter: (d: Winger) => d.tackleRating >= 75,
       notEmptyFilter: (f: Winger) =>
         f.progressivePassesPer90 > 0 || f.openSucessfullCrosses90 > 0,
       wageFilter: (d: Winger) => d.wage <= 120000,
-      // arealFiilters: (d: Winger) =>
-      //   d.arealAttempsPer90 > 3 && d.headersWonRatio > 50,
-      keyPassFilter: (d: Winger) => d.keyPasses > 0.7,
-      dribl: (d: Winger) => d.dribbles > 1,
+      keyPassFilter: (d: Winger) => d.keyPasses > 1.2,
+      dribl: (d: Winger) => d.dribbles > 2,
+      creatorOrSkorer: (d: Winger) => d.xA > 0.2 || d.conv > 10,
     };
 
     const filteredLeft = applyFilters(this.playersLeft, filterMap);
@@ -51,13 +48,13 @@ export class WingerProcessor {
     return [filteredLeft, filteredRight].flat();
   }
 
-  print(fullbacks: Array<LeftWinger | RightWinger>) {
+  print(wingers: Array<LeftWinger | RightWinger>) {
     this.realPrint(
-      fullbacks.filter((f) => f.side === "left"),
+      wingers.filter((f) => f.side === "left"),
       "left"
     );
     this.realPrint(
-      fullbacks.filter((f) => f.side === "right"),
+      wingers.filter((f) => f.side === "right"),
       "right"
     );
   }
@@ -191,7 +188,9 @@ class LeftWinger extends Winger {
   }
 
   static isRole(player: Player): boolean {
-    return player.Position.some((p) => p.type === "D" && p.side?.includes("L"));
+    return player.Position.some(
+      (p) => (p.type === "AM" || p.type === "M") && p.side?.includes("L")
+    );
   }
 }
 class RightWinger extends Winger {
@@ -201,6 +200,8 @@ class RightWinger extends Winger {
   }
 
   static isRole(player: Player): boolean {
-    return player.Position.some((p) => p.type === "D" && p.side?.includes("R"));
+    return player.Position.some(
+      (p) => (p.type === "AM" || p.type === "M") && p.side?.includes("R")
+    );
   }
 }
