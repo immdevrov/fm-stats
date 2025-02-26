@@ -43,7 +43,7 @@ export type Player = {
   PossLostPer90: number;
   SprintsPer90: number;
   DrbPer90: number;
-  DistPer90: string;
+  DistPer90: number;
   PresCPer90: number;
   PresAPer90: number;
   Svt: number;

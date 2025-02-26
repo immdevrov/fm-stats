@@ -1,6 +1,7 @@
 import { filterByContractExpiryDate } from "./fields/expires";
 import { readCsvFile, parsePlayerStats } from "./parser";
 import { CentralDefenderProcessor } from "./roles/central-defender";
+import { CentralMidfilderProcessor } from "./roles/central-midfilder";
 import { DefensiveMidfilderProcessor } from "./roles/defensive-midfilder";
 import { FullbackProcessor } from "./roles/fullback";
 import { GoalKeeperProcessor } from "./roles/goalkeeper";
@@ -60,6 +61,8 @@ function main() {
     wgProcessor.print(wgProcessor.filter());
     const dmProcessor = new DefensiveMidfilderProcessor(dateFilteredPlayers);
     dmProcessor.print(dmProcessor.filter());
+    const cmProcessor = new CentralMidfilderProcessor(dateFilteredPlayers);
+    cmProcessor.print(cmProcessor.filter());
   } catch (error) {
     console.error("Error:", (error as Error).message);
     process.exit(1);
