@@ -4,6 +4,7 @@ import { CentralDefenderProcessor } from "./roles/central-defender";
 import { FullbackProcessor } from "./roles/fullback";
 import { GoalKeeperProcessor } from "./roles/goalkeeper";
 import { StrikersProcessor } from "./roles/striker";
+import { WingerProcessor } from "./roles/winger";
 
 function getCurrentDateFromFilePath(filePath: string) {
   const dateRegex = /(\d{2}_\d{2}_\d{4})\.csv$/;
@@ -48,6 +49,8 @@ function main() {
     stProcessor.print(stProcessor.filter());
     const fbProcessor = new FullbackProcessor(dateFilteredPlayers);
     fbProcessor.print(fbProcessor.filter());
+    const wgProcessor = new WingerProcessor(dateFilteredPlayers);
+    wgProcessor.print(wgProcessor.filter());
   } catch (error) {
     console.error("Error:", (error as Error).message);
     process.exit(1);

@@ -3,11 +3,7 @@ import { displayDate, formatWage, printTable } from "../utils";
 import { applyFilters, filterMap } from "./_filter";
 import { Role, IRole } from "./_role";
 
-interface IFullback extends IRole {
-  height: number;
-  mistakes: number;
-  tackleRating: number;
-  tacklesPer90: number;
+interface IWinger extends IRole {
   progressivePassesPer90: number;
   passesPercent: number;
   headersWonRatio: number;
@@ -20,30 +16,33 @@ interface IFullback extends IRole {
   xA: number;
   keyPasses: number;
   dribbles: number;
+  npXG: number;
+  conv: number;
 }
 
-export class FullbackProcessor {
-  playersLeft: LeftFullback[];
-  playersRight: RightFullback[];
+export class WingerProcessor {
+  playersLeft: LeftWinger[];
+  playersRight: RightWinger[];
   constructor(players: Player[]) {
-    const pl = players.filter(LeftFullback.isRole);
-    const pr = players.filter(RightFullback.isRole);
+    const pl = players.filter(LeftWinger.isRole);
+    const pr = players.filter(RightWinger.isRole);
 
-    this.playersLeft = pl.map((p) => new LeftFullback(p));
-    this.playersRight = pr.map((p) => new RightFullback(p));
+    this.playersLeft = pl.map((p) => new LeftWinger(p));
+    this.playersRight = pr.map((p) => new RightWinger(p));
   }
 
   filter() {
-    const filterMap: filterMap<Fullback> = {
-      // noMistakesFilter: (d: Fullback) => d.mistakes <= 1,
-      noInjuriesFilter: (d: Fullback) => !d.injuries,
-      // headerRatioFilter: (d: Fullback) => d.headersWonRatio >= 70,
-      // tacklesRationFilter: (d: Fullback) => d.tackleRating >= 75,
-      notEmptyFilter: (f: Fullback) =>
+    const filterMap: filterMap<Winger> = {
+      noInjuriesFilter: (d: Winger) => !d.injuries,
+      // headerRatioFilter: (d: Winger) => d.headersWonRatio >= 70,
+      // tacklesRationFilter: (d: Winger) => d.tackleRating >= 75,
+      notEmptyFilter: (f: Winger) =>
         f.progressivePassesPer90 > 0 || f.openSucessfullCrosses90 > 0,
-      wageFilter: (d: Fullback) => d.wage <= 120000,
-      arealFiilters: (d: Fullback) =>
-        d.arealAttempsPer90 > 3 && d.headersWonRatio > 50,
+      wageFilter: (d: Winger) => d.wage <= 120000,
+      // arealFiilters: (d: Winger) =>
+      //   d.arealAttempsPer90 > 3 && d.headersWonRatio > 50,
+      keyPassFilter: (d: Winger) => d.keyPasses > 0.7,
+      dribl: (d: Winger) => d.dribbles > 1,
     };
 
     const filteredLeft = applyFilters(this.playersLeft, filterMap);
@@ -52,7 +51,7 @@ export class FullbackProcessor {
     return [filteredLeft, filteredRight].flat();
   }
 
-  print(fullbacks: Array<LeftFullback | RightFullback>) {
+  print(fullbacks: Array<LeftWinger | RightWinger>) {
     this.realPrint(
       fullbacks.filter((f) => f.side === "left"),
       "left"
@@ -63,7 +62,7 @@ export class FullbackProcessor {
     );
   }
 
-  private realPrint(fbList: Fullback[], side: "left" | "right") {
+  private realPrint(fbList: Winger[], side: "left" | "right") {
     const display = fbList.map((g) => {
       const {
         uid,
@@ -73,10 +72,6 @@ export class FullbackProcessor {
         passesPercent,
         arealAttempsPer90: ArealAttps,
         headersWonRatio,
-        tacklesPer90: tclks,
-        tackleRating: tclsR,
-        posessionLostPer90: posLost,
-        posessionWonPer90: posWon,
         contractExpires,
         wage,
         openCrossesRatio,
@@ -85,6 +80,8 @@ export class FullbackProcessor {
         xA,
         keyPasses,
         dribbles,
+        npXG,
+        conv,
       } = g;
       return {
         uid,
@@ -94,9 +91,6 @@ export class FullbackProcessor {
         "hdrs%": headersWonRatio,
         "pass%": passesPercent,
         prPass,
-        tclks,
-        tclsR,
-        posDif: (posWon - posLost).toFixed(2),
         xA,
         kPass: keyPasses,
         drib: dribbles,
@@ -105,16 +99,18 @@ export class FullbackProcessor {
           2
         ),
         press: successfullPressures90,
+        npXG,
+        conv,
         wage: wage ? formatWage(wage) : null,
         contractExpires: contractExpires ? displayDate(contractExpires) : null,
       };
     });
-    console.log(`There is ${display.length} ${side} defenders to watch`);
+    console.log(`There is ${display.length} ${side} wingers to watch`);
     printTable(display);
   }
 }
 
-class Fullback extends Role implements IFullback {
+class Winger extends Role implements IWinger {
   constructor(player: Player) {
     super(player);
   }
@@ -122,21 +118,9 @@ class Fullback extends Role implements IFullback {
   static isRole(player: Player): boolean {
     return player.Position.some(
       (p) =>
-        (p.type === "D" || p.type === "WB") &&
+        (p.type === "AM" || p.type === "M") &&
         (p.side?.includes("L") || p.side?.includes("R"))
     );
-  }
-
-  get height() {
-    return this.player.Height;
-  }
-
-  get mistakes() {
-    return this.player.GlMst;
-  }
-
-  get tackleRating() {
-    return this.player.TckR;
   }
 
   get progressivePassesPer90() {
@@ -190,9 +174,17 @@ class Fullback extends Role implements IFullback {
   get dribbles() {
     return this.player.DrbPer90;
   }
+
+  get npXG() {
+    return this.player.NPxGPer90;
+  }
+
+  get conv() {
+    return this.player.ConvPercentage;
+  }
 }
 
-class LeftFullback extends Fullback {
+class LeftWinger extends Winger {
   readonly side = "left";
   constructor(player: Player) {
     super(player);
@@ -202,7 +194,7 @@ class LeftFullback extends Fullback {
     return player.Position.some((p) => p.type === "D" && p.side?.includes("L"));
   }
 }
-class RightFullback extends Fullback {
+class RightWinger extends Winger {
   readonly side = "right";
   constructor(player: Player) {
     super(player);

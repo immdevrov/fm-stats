@@ -76,7 +76,7 @@ export function parsePlayerStats(csvContent: string): Player[] {
         ChCPer90: Number(record["Ch C/90"] || 0),
         OPCrPercentage: processHyphen(record["OP-Cr %"], parseFloat),
         OPCrsCPer90: processHyphen(record["OP-Crs C/90"], parseFloat),
-        ConvPercentage: Number((record["Conv %"] || "0").replace("%", "")),
+        ConvPercentage: processHyphen(record["Conv %"], parseFloat),
         xGOP: Number(record["xG-OP"] || 0),
         ShTPer90: Number(record["ShT/90"]),
         ShotsOutsideBoxPer90: Number(record["Shots Outside Box/90"]),
