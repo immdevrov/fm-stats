@@ -1,18 +1,26 @@
 import { Player } from "../types";
-import { displayDate, formatWage, printTable } from "../utils";
+import {
+  displayDate,
+  formatWage,
+  getCohort,
+  getColumn,
+  printTable,
+  sortIntoCohorts,
+} from "../utils";
 import { applyFilters } from "./_filter";
 import { Role, IRole } from "./_role";
 
 interface IStriker extends IRole {
   headersWonRatio: number;
   arealAttempsPer90: number;
-  pressAPer90: number;
   xA: number;
   xgOP: number;
   npXG: number;
   shots90: number;
   conv: number;
   drbls: number;
+  pressures: number;
+  keyPasses: number;
 }
 
 export class StrikersProcessor {
@@ -26,6 +34,7 @@ export class StrikersProcessor {
   filter() {
     const filtered = applyFilters(this.players, {
       noInjuriesFilter: (d: Striker) => !d.injuries,
+      nonEmpty: (d: Striker) => d.arealAttempsPer90 > 0,
       wageFilter: (d: Striker) => d.wage <= 120000,
       doesntWasteMoments: (d) => d.xgOP > 0,
       // npXG: (d: Striker) => d.npXG > 0.3,
@@ -35,8 +44,11 @@ export class StrikersProcessor {
     return filtered;
   }
 
-  print(defenders: Striker[]) {
-    const display = defenders.map((g) => {
+  print(strikers: Striker[]) {
+    const xACohorts = sortIntoCohorts(getColumn(strikers, "xA"));
+    const hdrsCohorts = sortIntoCohorts(getColumn(strikers, "headersWonRatio"));
+    const dribblesCohorts = sortIntoCohorts(getColumn(strikers, "drbls"));
+    const display = strikers.map((g) => {
       const {
         uid,
         name,
@@ -46,8 +58,9 @@ export class StrikersProcessor {
         conv,
         shots90,
         xA,
+        keyPasses,
         drbls,
-        pressAPer90,
+        pressures,
         arealAttempsPer90: ArealAttPer90,
         headersWonRatio: hdrsWonRatio,
         contractExpires,
@@ -60,12 +73,13 @@ export class StrikersProcessor {
         xgOP,
         npXG,
         conv,
+        keyPasses,
         shots90,
-        xA,
-        drbls,
-        pressAPer90,
+        xA: getCohort(xA, xACohorts),
+        drbls: getCohort(drbls, dribblesCohorts),
+        pressures,
         ArealAttPer90,
-        hdrsWonRatio,
+        hdrsWonRatio: getCohort(hdrsWonRatio, hdrsCohorts),
         wage: wage ? formatWage(wage) : null,
         contractExpires: contractExpires ? displayDate(contractExpires) : null,
       };
@@ -91,9 +105,6 @@ export class Striker extends Role implements IStriker {
   get arealAttempsPer90() {
     return this.player.AerAPer90;
   }
-  get pressAPer90() {
-    return this.player.PresAPer90;
-  }
   get xA() {
     return this.player.xAPer90;
   }
@@ -116,5 +127,13 @@ export class Striker extends Role implements IStriker {
 
   get drbls() {
     return this.player.DrbPer90;
+  }
+
+  get pressures() {
+    return this.player.PresCPer90;
+  }
+
+  get keyPasses() {
+    return this.player.OPKPPer90;
   }
 }

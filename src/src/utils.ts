@@ -56,3 +56,41 @@ export function formatWage(number: number) {
     maximumFractionDigits: 0,
   }).format(number);
 }
+
+export function sortIntoCohorts(numbers: number[]): {
+  bottom: number[];
+  middle: number[];
+  top: number[];
+} {
+  if (numbers.length === 0) {
+    return { bottom: [], middle: [], top: [] };
+  }
+
+  const sorted = numbers.toSorted((a, b) => a - b);
+
+  const third = Math.ceil(numbers.length / 3);
+
+  return {
+    bottom: sorted.slice(0, third),
+    middle: sorted.slice(third, third * 2),
+    top: sorted.slice(third * 2),
+  };
+}
+
+export function getCohort(
+  num: number,
+  cohorts: { bottom: number[]; middle: number[]; top: number[] }
+): string {
+  if (cohorts.bottom.length === 0) return "No data available";
+
+  const maxBottom = cohorts.bottom[cohorts.bottom.length - 1];
+  const minMiddle = cohorts.middle[0];
+  const maxMiddle = cohorts.middle[cohorts.middle.length - 1];
+  const minTop = cohorts.top[0];
+
+  if (num <= maxBottom) return "Bottom";
+  if (num >= minMiddle && num <= maxMiddle) return "Middle";
+  if (num >= minTop) return "Top";
+
+  return "Out of range";
+}

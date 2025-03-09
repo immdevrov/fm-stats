@@ -40,31 +40,35 @@ function main() {
     const alreadySignedForNextyear = players.filter((p) =>
       [12092862].includes(p.UID)
     );
-    const dateFilteredPlayers = [
-      filterByContractExpiryDate({
-        players,
-        currentDate: date,
-        options: "THREE_MONTHS",
-      }),
-      alreadySignedForNextyear,
-    ].flat();
+    const dateFilteredPlayers = players;
+
+    // const dateFilteredPlayers = [
+    //   filterByContractExpiryDate({
+    //     players,
+    //     currentDate: date,
+    //     options: "THREE_MONTHS",
+    //   }),
+    //   alreadySignedForNextyear,
+    // ].flat();
+
     console.log(`${dateFilteredPlayers.length} players on short contract`);
 
     const cdProcessor = new CentralDefenderProcessor(dateFilteredPlayers);
-    cdProcessor.print(cdProcessor.filter());
     const gkProcessor = new GoalKeeperProcessor(dateFilteredPlayers);
-    gkProcessor.print(gkProcessor.filter());
     const stProcessor = new StrikersProcessor(dateFilteredPlayers);
-    stProcessor.print(stProcessor.filter());
     const fbProcessor = new FullbackProcessor(dateFilteredPlayers);
-    fbProcessor.print(fbProcessor.filter());
     const wgProcessor = new WingerProcessor(dateFilteredPlayers);
-    wgProcessor.print(wgProcessor.filter());
     const dmProcessor = new DefensiveMidfilderProcessor(dateFilteredPlayers);
-    dmProcessor.print(dmProcessor.filter());
     const cmProcessor = new CentralMidfilderProcessor(dateFilteredPlayers);
-    cmProcessor.print(cmProcessor.filter());
     const amProcessor = new AttackingMidfilderProcessor(dateFilteredPlayers);
+
+    cdProcessor.print(cdProcessor.filter());
+    gkProcessor.print(gkProcessor.filter());
+    stProcessor.print(stProcessor.filter());
+    fbProcessor.print(fbProcessor.filter());
+    wgProcessor.print(wgProcessor.filter());
+    dmProcessor.print(dmProcessor.filter());
+    cmProcessor.print(cmProcessor.filter());
     amProcessor.print(amProcessor.filter());
   } catch (error) {
     console.error("Error:", (error as Error).message);

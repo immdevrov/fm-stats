@@ -39,7 +39,7 @@ export class WingerProcessor {
       wageFilter: (d: Winger) => d.wage <= 120000,
       keyPassFilter: (d: Winger) => d.keyPasses > 1.2,
       dribl: (d: Winger) => d.dribbles > 2,
-      creatorOrSkorer: (d: Winger) => d.xA > 0.2 || d.conv > 10,
+      creatorOrScorer: (d: Winger) => d.xA > 0.2 || d.conv > 10,
     };
 
     const filteredLeft = applyFilters(this.playersLeft, filterMap);
