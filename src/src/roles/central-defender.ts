@@ -1,3 +1,4 @@
+import { getFilters } from "../filters";
 import { Player } from "../types";
 import { displayDate, formatWage, printTable } from "../utils";
 import { applyFilters } from "./_filter";
@@ -26,11 +27,13 @@ export class CentralDefenderProcessor {
 
   filter() {
     const filtered = applyFilters(this.players, {
-      noMistakesFilter: (d: CentralDefender) => d.mistakes <= 1,
-      noInjuriesFilter: (d: CentralDefender) => !d.injuries,
-      headerRatioFilter: (d: CentralDefender) => d.headersWonRatio >= 70,
+      noInjuriesFilter: getFilters().noInjuriesFilter,
+      minutes: getFilters().timePlayed,
+      // noMistakesFilter: (d: CentralDefender) => d.mistakes <= 1,
+      headerRatioFilter: (d: CentralDefender) => d.headersWonRatio >= 60,
       tacklesRationFilter: (d: CentralDefender) => d.tackleRating >= 75,
       wageFilter: (d: CentralDefender) => d.wage <= 120000,
+      passing: (d: CentralDefender) => d.passesPercent >= 89,
     });
 
     return filtered;

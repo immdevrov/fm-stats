@@ -37,19 +37,18 @@ function main() {
     console.log(`Successfully loaded ${players.length} players`);
 
     const date = getCurrentDateFromFilePath(filePath);
-    const alreadySignedForNextyear = players.filter((p) =>
-      [12092862].includes(p.UID)
-    );
-    const dateFilteredPlayers = players;
+    console.log(date);
+    // const alreadySignedForNextyear = players.filter((p) => [12092862].includes(p.UID));
+    // const dateFilteredPlayers = players;
 
-    // const dateFilteredPlayers = [
-    //   filterByContractExpiryDate({
-    //     players,
-    //     currentDate: date,
-    //     options: "THREE_MONTHS",
-    //   }),
-    //   alreadySignedForNextyear,
-    // ].flat();
+    const dateFilteredPlayers = [
+      filterByContractExpiryDate({
+        players,
+        currentDate: date,
+        options: "SIX_MONTHS",
+      }),
+      // alreadySignedForNextyear,
+    ].flat();
 
     console.log(`${dateFilteredPlayers.length} players on short contract`);
 
@@ -62,13 +61,13 @@ function main() {
     const cmProcessor = new CentralMidfilderProcessor(dateFilteredPlayers);
     const amProcessor = new AttackingMidfilderProcessor(dateFilteredPlayers);
 
-    cdProcessor.print(cdProcessor.filter());
     gkProcessor.print(gkProcessor.filter());
-    stProcessor.print(stProcessor.filter());
-    fbProcessor.print(fbProcessor.filter());
-    wgProcessor.print(wgProcessor.filter());
     dmProcessor.print(dmProcessor.filter());
     cmProcessor.print(cmProcessor.filter());
+    cdProcessor.print(cdProcessor.filter());
+    wgProcessor.print(wgProcessor.filter());
+    stProcessor.print(stProcessor.filter());
+    fbProcessor.print(fbProcessor.filter());
     amProcessor.print(amProcessor.filter());
   } catch (error) {
     console.error("Error:", (error as Error).message);

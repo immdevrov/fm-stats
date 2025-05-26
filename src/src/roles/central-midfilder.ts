@@ -1,3 +1,4 @@
+import { getFilters } from "../filters";
 import { Player } from "../types";
 import { displayDate, formatWage, printTable } from "../utils";
 import { applyFilters } from "./_filter";
@@ -27,14 +28,17 @@ export class CentralMidfilderProcessor {
 
   filter() {
     const filtered = applyFilters(this.players, {
-      noInjuriesFilter: (d: CentralMidfilder) => !d.injuries,
-      // headerRatioFilter: (d: CentralMidfilder) => d.headersWonRatio >= 70,
-      // tacklesRationFilter: (d: CentralMidfilder) => d.tackleRating >= 75,
+      noInjuriesFilter: getFilters().noInjuriesFilter,
+      minutes: getFilters().timePlayed,
       notEmptyFilter: (f: CentralMidfilder) => f.posessionWonPer90 > 0,
-      wageFilter: (d: CentralMidfilder) => d.wage <= 120000,
-      ballRetention: (d: CentralMidfilder) =>
-        d.posessionWonPer90 - d.posessionLostPer90 > 0,
+      wageFilter: (d: CentralMidfilder) => d.wage <= 100000,
+      // ballRetention: (d: CentralMidfilder) =>
+      //   d.posessionWonPer90 - d.posessionLostPer90 > 0,
       distanse: (d: CentralMidfilder) => d.distance > 12.5,
+      tackles: (d: CentralMidfilder) => d.tackleRating > 70,
+      headers: (d: CentralMidfilder) => d.headersWonRatio > 40,
+      progressViaPassOrCarry: (d: CentralMidfilder) =>
+        d.progressivePassesPer90 > 4.5 || d.dribbles > 1.2,
     });
 
     return filtered;
@@ -52,6 +56,7 @@ export class CentralMidfilderProcessor {
         tackleRating: tclsR,
         posessionLostPer90: posLost,
         posessionWonPer90: posWon,
+        headersWonRatio,
         keyPasses,
         dribbles,
         sprints,
@@ -70,6 +75,7 @@ export class CentralMidfilderProcessor {
         tclsR,
         posLost,
         posWon,
+        hwr: headersWonRatio,
         keyPasses,
         dribbles,
         sprints,
@@ -133,6 +139,10 @@ export class CentralMidfilder extends Role implements ICentralMidfilder {
 
   get distance() {
     return this.player.DistPer90;
+  }
+
+  get headersWonRatio() {
+    return this.player.HdrPercentage;
   }
 
   get pressures() {

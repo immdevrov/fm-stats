@@ -1,3 +1,4 @@
+import { getFilters } from "../filters";
 import { Player } from "../types";
 import { displayDate, formatWage, printTable } from "../utils";
 import { applyFilters } from "./_filter";
@@ -25,13 +26,17 @@ export class DefensiveMidfilderProcessor {
 
   filter() {
     const filtered = applyFilters(this.players, {
-      noInjuriesFilter: (d: DefensiveMidfilder) => !d.injuries,
+      noInjuriesFilter: getFilters().noInjuriesFilter,
+      timePlayed: getFilters().timePlayed,
       // headerRatioFilter: (d: DefensiveMidfilder) => d.headersWonRatio >= 70,
       // tacklesRationFilter: (d: DefensiveMidfilder) => d.tackleRating >= 75,
       notEmptyFilter: (f: DefensiveMidfilder) => f.posessionWonPer90 > 0,
-      wageFilter: (d: DefensiveMidfilder) => d.wage <= 120000,
-      ballRetention: (d: DefensiveMidfilder) =>
-        d.posessionWonPer90 - d.posessionLostPer90 > 0,
+      wageFilter: (d: DefensiveMidfilder) => d.wage <= 100000,
+      doNotLostBall: (d: DefensiveMidfilder) => d.posessionLostPer90 < 10,
+      tackles: (d: DefensiveMidfilder) => d.tackleRating > 70,
+      headers: (d: DefensiveMidfilder) => d.headersWonRatio > 40,
+      passes: (d: DefensiveMidfilder) => d.passesPercent >= 88,
+      prPasses: (d: DefensiveMidfilder) => d.progressivePassesPer90 >= 5,
     });
 
     return filtered;
@@ -60,7 +65,7 @@ export class DefensiveMidfilderProcessor {
         name,
         nat,
         ArealAttps,
-        hdrsWonRatio,
+        hwr: hdrsWonRatio,
         "pass%": passesPercent,
         prPass,
         tclks,

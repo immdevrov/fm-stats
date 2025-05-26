@@ -1,3 +1,4 @@
+import { getFilters } from "../filters";
 import { Player } from "../types";
 import { displayDate, formatWage, printTable } from "../utils";
 import { applyFilters, filterMap } from "./_filter";
@@ -36,14 +37,13 @@ export class FullbackProcessor {
   filter() {
     const filterMap: filterMap<Fullback> = {
       // noMistakesFilter: (d: Fullback) => d.mistakes <= 1,
-      noInjuriesFilter: (d: Fullback) => !d.injuries,
-      // headerRatioFilter: (d: Fullback) => d.headersWonRatio >= 70,
-      // tacklesRationFilter: (d: Fullback) => d.tackleRating >= 75,
+      noInjuriesFilter: getFilters().noInjuriesFilter,
+      minutes: getFilters().timePlayed,
+      headerRatioFilter: (d: Fullback) => d.headersWonRatio >= 70,
+      tacklesRationFilter: (d: Fullback) => d.tackleRating >= 75,
       notEmptyFilter: (f: Fullback) =>
         f.progressivePassesPer90 > 0 || f.openSucessfullCrosses90 > 0,
-      wageFilter: (d: Fullback) => d.wage <= 120000,
-      arealFiilters: (d: Fullback) =>
-        d.arealAttempsPer90 > 3 && d.headersWonRatio > 50,
+      wageFilter: (d: Fullback) => d.wage <= 100000,
     };
 
     const filteredLeft = applyFilters(this.playersLeft, filterMap);
@@ -101,9 +101,7 @@ export class FullbackProcessor {
         kPass: keyPasses,
         drib: dribbles,
         "oCrs%": openCrossesRatio,
-        oCrsAtt: ((openSucessfullCrosses90 / openCrossesRatio) * 100).toFixed(
-          2
-        ),
+        oCrsAtt: ((openSucessfullCrosses90 / openCrossesRatio) * 100).toFixed(2),
         press: successfullPressures90,
         wage: wage ? formatWage(wage) : null,
         contractExpires: contractExpires ? displayDate(contractExpires) : null,

@@ -1,12 +1,7 @@
+import { getFilters } from "../filters";
 import type { Player, Table } from "../types";
 
-import {
-  average,
-  displayDate,
-  formatWage,
-  getColumn,
-  printTable,
-} from "../utils";
+import { average, displayDate, formatWage, getColumn, printTable } from "../utils";
 import { applyFilters } from "./_filter";
 import { IRole, Role } from "./_role";
 
@@ -23,7 +18,8 @@ export class GoalKeeperProcessor {
     const averageSavesHeld = average(getColumn(table, "savesHeldPercentage"));
 
     const filteredPlayers = applyFilters(this.players, {
-      noInjuriesFilter: (g: GoalKeeper) => !g.injuries,
+      noInjuriesFilter: getFilters().noInjuriesFilter,
+      timePlayed: getFilters().timePlayed,
       goodShotStoppers: (g: GoalKeeper) =>
         g.goalsPrevented90 === "Good" || g.goalsPrevented90 === "OK",
       holdMostSaves: (g: GoalKeeper) => {
@@ -32,6 +28,7 @@ export class GoalKeeperProcessor {
         }
         return g.savesHeldPercentage >= averageSavesHeld;
       },
+      mistakes: (g) => g.mistakes === 0,
     });
     return filteredPlayers;
   }
@@ -87,10 +84,10 @@ export class GoalKeeper extends Role implements IGoalKeeper {
 
   get goalsPrevented90(): "Good" | "OK" | "Poor" {
     const gp = this.player.xGPPer90;
-    if (gp >= 0.2) {
+    if (gp >= 0.1) {
       return "Good";
     }
-    if (gp < 0.2 && gp >= 0) {
+    if (gp < 0.1 && gp >= -0.1) {
       return "OK";
     }
     return "Poor";

@@ -1,3 +1,4 @@
+import { getFilters } from "../filters";
 import { Player } from "../types";
 import { displayDate, formatWage, printTable } from "../utils";
 import { applyFilters } from "./_filter";
@@ -25,11 +26,12 @@ export class AttackingMidfilderProcessor {
 
   filter() {
     const filtered = applyFilters(this.players, {
-      noInjuriesFilter: (d: AttackingMidfilder) => !d.injuries,
+      noInjuriesFilter: getFilters().noInjuriesFilter,
+      minutes: getFilters().timePlayed,
       notEmptyFilter: (f: AttackingMidfilder) =>
         f.progressivePassesPer90 > 0 && f.conv > 0,
-      keyPases: (f: AttackingMidfilder) => f.keyPasses > 1,
-      wageFilter: (d: AttackingMidfilder) => d.wage <= 120000,
+      keyPases: (f: AttackingMidfilder) => f.keyPasses > 1.5,
+      wageFilter: (d: AttackingMidfilder) => d.wage <= 100000,
     });
 
     return filtered;

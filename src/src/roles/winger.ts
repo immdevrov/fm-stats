@@ -1,3 +1,4 @@
+import { getFilters } from "../filters";
 import { Player } from "../types";
 import { displayDate, formatWage, printTable } from "../utils";
 import { applyFilters, filterMap } from "./_filter";
@@ -33,13 +34,14 @@ export class WingerProcessor {
 
   filter() {
     const filterMap: filterMap<Winger> = {
-      noInjuriesFilter: (d: Winger) => !d.injuries,
+      noInjuriesFilter: getFilters().noInjuriesFilter,
+      minutes: getFilters().timePlayed,
       notEmptyFilter: (f: Winger) =>
         f.progressivePassesPer90 > 0 || f.openSucessfullCrosses90 > 0,
       wageFilter: (d: Winger) => d.wage <= 120000,
       keyPassFilter: (d: Winger) => d.keyPasses > 1.2,
-      dribl: (d: Winger) => d.dribbles > 2,
-      creatorOrScorer: (d: Winger) => d.xA > 0.2 || d.conv > 10,
+      dribl: (d: Winger) => d.dribbles > 3,
+      creatorOrScorer: (d: Winger) => d.xA > 0.25 || d.conv > 15,
     };
 
     const filteredLeft = applyFilters(this.playersLeft, filterMap);
@@ -92,9 +94,7 @@ export class WingerProcessor {
         kPass: keyPasses,
         drib: dribbles,
         "oCrs%": openCrossesRatio,
-        oCrsAtt: ((openSucessfullCrosses90 / openCrossesRatio) * 100).toFixed(
-          2
-        ),
+        oCrsAtt: ((openSucessfullCrosses90 / openCrossesRatio) * 100).toFixed(2),
         press: successfullPressures90,
         npXG,
         conv,

@@ -1,3 +1,4 @@
+import { getFilters } from "../filters";
 import { Player } from "../types";
 import {
   displayDate,
@@ -33,11 +34,11 @@ export class StrikersProcessor {
 
   filter() {
     const filtered = applyFilters(this.players, {
-      noInjuriesFilter: (d: Striker) => !d.injuries,
+      noInjuriesFilter: getFilters().noInjuriesFilter,
+      minutes: getFilters().timePlayed,
       nonEmpty: (d: Striker) => d.arealAttempsPer90 > 0,
-      wageFilter: (d: Striker) => d.wage <= 120000,
+      wage: (d) => d.wage <= 100000,
       doesntWasteMoments: (d) => d.xgOP > 0,
-      // npXG: (d: Striker) => d.npXG > 0.3,
       conv: (d) => d.conv > 20,
     });
 
