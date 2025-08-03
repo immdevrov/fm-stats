@@ -20,15 +20,16 @@ export class GoalKeeperProcessor {
     const filteredPlayers = applyFilters(this.players, {
       noInjuriesFilter: getFilters().noInjuriesFilter,
       timePlayed: getFilters().timePlayed,
-      goodShotStoppers: (g: GoalKeeper) =>
-        g.goalsPrevented90 === "Good" || g.goalsPrevented90 === "OK",
+      goodShotStoppers: (g: GoalKeeper) => g.goalsPrevented90 === "Good",
+      europian: (g: GoalKeeper) => !["ARG", "BRA"].includes(g.nat),
       holdMostSaves: (g: GoalKeeper) => {
         if (!averageSavesHeld) {
           return true;
         }
         return g.savesHeldPercentage >= averageSavesHeld;
       },
-      mistakes: (g) => g.mistakes === 0,
+      savesMoreThenExpected: (g: GoalKeeper) => g.expectedSavesDiff > 0,
+      mistakes: (g) => g.mistakes <= 1,
     });
     return filteredPlayers;
   }
@@ -45,16 +46,22 @@ export class GoalKeeperProcessor {
         savesHeldPercentage,
         contractExpires,
         wage,
+        division,
+        age,
+        expectedSavesDiff,
       } = g;
       return {
         uid,
         name,
+        division,
         nat,
         goalsPrevented90,
         height,
         mistakes,
         savesHeldPercentage,
         wage: wage ? formatWage(wage) : null,
+        age,
+        expectedSavesDiff,
         contractExpires: contractExpires ? displayDate(contractExpires) : null,
       };
     });
@@ -68,6 +75,8 @@ export interface IGoalKeeper extends IRole {
   goalsPrevented90: "Good" | "OK" | "Poor";
   mistakes: number;
   savesHeldPercentage: number;
+  age: number;
+  expectedSavesDiff: number;
 }
 export class GoalKeeper extends Role implements IGoalKeeper {
   constructor(player: Player) {
@@ -84,13 +93,22 @@ export class GoalKeeper extends Role implements IGoalKeeper {
 
   get goalsPrevented90(): "Good" | "OK" | "Poor" {
     const gp = this.player.xGPPer90;
-    if (gp >= 0.1) {
+    if (gp >= 0.25) {
       return "Good";
     }
-    if (gp < 0.1 && gp >= -0.1) {
+    if (gp < 0.2 && gp >= 0) {
       return "OK";
     }
     return "Poor";
+  }
+
+  get expectedSavesDiff(): number {
+    const { svPercentage, exsvPercentage } = this.player;
+    return svPercentage - exsvPercentage;
+  }
+
+  get age(): number {
+    return this.player.Age;
   }
 
   get mistakes() {

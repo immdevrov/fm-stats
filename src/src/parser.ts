@@ -39,7 +39,7 @@ export function parsePlayerStats(csvContent: string): Player[] {
   const processNA = processString("N/A");
   const parseWage = (record: any) => {
     const fn = (str: string) =>
-      parseInt(str.replaceAll(",", "").replaceAll("€", ""));
+      parseInt(str.replaceAll(",", "").replaceAll("€", "").replaceAll("$", ""));
     return processNA(record.Wage, fn);
   };
   const processRecord = (record: any) => {
@@ -55,8 +55,7 @@ export function parsePlayerStats(csvContent: string): Player[] {
         Division: record.Division,
         Club: record.Club,
         Wage: parseWage(record),
-        Expires:
-          record.Expires === "-" ? null : parseCustomDate(record.Expires),
+        Expires: record.Expires === "-" ? null : parseCustomDate(record.Expires),
         Position: parsePositions(record.Position),
         SecPosition:
           record["Sec. Position"] !== "-"
@@ -64,9 +63,7 @@ export function parsePlayerStats(csvContent: string): Player[] {
             : null,
         Starts: Number(record.Starts),
         Mins: Number(
-          typeof record.Mins === "string"
-            ? record.Mins.replace(",", "")
-            : record.Mins
+          typeof record.Mins === "string" ? record.Mins.replace(",", "") : record.Mins
         ),
         PasPercentage: Number(record["Pas %"].replace("%", "")),
         AssistsPer90: Number(record["Asts/90"]),
@@ -81,6 +78,7 @@ export function parsePlayerStats(csvContent: string): Player[] {
         ShTPer90: Number(record["ShT/90"]),
         ShotsOutsideBoxPer90: Number(record["Shots Outside Box/90"]),
         NPxGPer90: Number(record["NP-xG/90"]),
+        goals90: processHyphen(record["Gls/90"], parseFloat),
         GlMst: Number(record["Gl Mst"]),
         TckPer90: processHyphen(record["Tck/90"], parseFloat),
         TckR: processHyphen(record["Tck R"], parseInt),
@@ -101,6 +99,8 @@ export function parsePlayerStats(csvContent: string): Player[] {
         Svt: record.Svt === "-" ? 0 : Number(record.Svt),
         Svp: record.Svp === "-" ? 0 : Number(record.Svp),
         Svh: record.Svh === "-" ? 0 : Number(record.Svh),
+        exsvPercentage: Number(record["xSv %"].replace("%", "")),
+        svPercentage: Number(record["Sv %"].replace("%", "")),
         xGPPer90: Number(record["xGP/90"]),
       };
     } catch (e) {

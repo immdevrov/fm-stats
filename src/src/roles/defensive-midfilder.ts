@@ -29,14 +29,14 @@ export class DefensiveMidfilderProcessor {
       noInjuriesFilter: getFilters().noInjuriesFilter,
       timePlayed: getFilters().timePlayed,
       // headerRatioFilter: (d: DefensiveMidfilder) => d.headersWonRatio >= 70,
-      // tacklesRationFilter: (d: DefensiveMidfilder) => d.tackleRating >= 75,
+      tacklesRationFilter: (d: DefensiveMidfilder) => d.tackleRating >= 80,
       notEmptyFilter: (f: DefensiveMidfilder) => f.posessionWonPer90 > 0,
-      wageFilter: (d: DefensiveMidfilder) => d.wage <= 100000,
+      wageFilter: (d: DefensiveMidfilder) => d.wage <= 20_000_000,
       doNotLostBall: (d: DefensiveMidfilder) => d.posessionLostPer90 < 10,
-      tackles: (d: DefensiveMidfilder) => d.tackleRating > 70,
+      lotOfTackles: (d: DefensiveMidfilder) => d.tacklesPer90 > 1.95,
       headers: (d: DefensiveMidfilder) => d.headersWonRatio > 40,
-      passes: (d: DefensiveMidfilder) => d.passesPercent >= 88,
-      prPasses: (d: DefensiveMidfilder) => d.progressivePassesPer90 >= 5,
+      passes: (d: DefensiveMidfilder) => d.passesPercent >= 90,
+      prPasses: (d: DefensiveMidfilder) => d.progressivePassesPer90 >= 7,
     });
 
     return filtered;

@@ -5,6 +5,7 @@ import {
   formatWage,
   getCohort,
   getColumn,
+  getPercentile,
   printTable,
   sortIntoCohorts,
 } from "../utils";
@@ -18,9 +19,12 @@ interface IStriker extends IRole {
   xgOP: number;
   npXG: number;
   shots90: number;
+  goals90: number;
   conv: number;
   drbls: number;
   pressures: number;
+  tackles90: number;
+  posWon90: number;
   keyPasses: number;
 }
 
@@ -37,12 +41,49 @@ export class StrikersProcessor {
       noInjuriesFilter: getFilters().noInjuriesFilter,
       minutes: getFilters().timePlayed,
       nonEmpty: (d: Striker) => d.arealAttempsPer90 > 0,
-      wage: (d) => d.wage <= 100000,
-      doesntWasteMoments: (d) => d.xgOP > 0,
-      conv: (d) => d.conv > 20,
+      // wage: (d) => d.wage <= 100000,
+      // doesntWasteMoments: (d) => d.xgOP > 0,
+      // conv: (d) => d.conv > 20,
     });
 
     return filtered;
+  }
+
+  analize(strikers: IStriker[]) {
+    // lets calculate arhetype badges
+    const PERCENTILE_TO_ACHIEVE_BADGE = 60;
+    const ARHETYPE_NAMES = {
+      GOALSCORER: "goalscorer",
+      PRESSING_FORWARD: "pressing forward",
+      CREATOR: "creator",
+    };
+    const arhetypes: Record<string, (keyof IStriker)[]> = {
+      [ARHETYPE_NAMES.GOALSCORER]: ["conv", "shots90", "goals90"],
+      [ARHETYPE_NAMES.PRESSING_FORWARD]: ["pressures", "tackles90", "posWon90"],
+    };
+
+    const playersWithArhetype = strikers.map((player) => {
+      const result: any = { uid: player.uid, name: player.name, badges: [] };
+
+      for (const [name, properties] of Object.entries(arhetypes)) {
+        let score: number = 0;
+        for (const prop of properties) {
+          const percentile = getPercentile(
+            player[prop] as number,
+            getColumn(strikers, prop) as number[]
+          );
+          result[prop] = percentile;
+          if (percentile >= PERCENTILE_TO_ACHIEVE_BADGE) {
+            score++;
+          }
+        }
+        if (score >= properties.length) {
+          result.badges.push(name);
+        }
+      }
+      return result;
+    });
+    printTable(playersWithArhetype);
   }
 
   print(strikers: Striker[]) {
@@ -66,6 +107,7 @@ export class StrikersProcessor {
         headersWonRatio: hdrsWonRatio,
         contractExpires,
         wage,
+        goals90,
       } = g;
       return {
         uid,
@@ -80,6 +122,7 @@ export class StrikersProcessor {
         drbls: getCohort(drbls, dribblesCohorts),
         pressures,
         ArealAttPer90,
+        goals90,
         hdrsWonRatio: getCohort(hdrsWonRatio, hdrsCohorts),
         wage: wage ? formatWage(wage) : null,
         contractExpires: contractExpires ? displayDate(contractExpires) : null,
@@ -97,6 +140,10 @@ export class Striker extends Role implements IStriker {
 
   static isRole(player: Player): boolean {
     return player.Position.some((p) => p.type === "ST");
+  }
+
+  get goals90(): number {
+    return this.player.goals90;
   }
 
   get headersWonRatio() {
@@ -132,6 +179,14 @@ export class Striker extends Role implements IStriker {
 
   get pressures() {
     return this.player.PresCPer90;
+  }
+
+  get tackles90() {
+    return this.player.TckR;
+  }
+
+  get posWon90() {
+    return this.player.PossWonPer90;
   }
 
   get keyPasses() {

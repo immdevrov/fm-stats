@@ -4,10 +4,7 @@ export function average(arr: number[]) {
   if (!arr.length) {
     return null;
   }
-  const sum = arr.reduce(
-    (accumulator, currentValue) => accumulator + currentValue,
-    0
-  );
+  const sum = arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 
   return sum / arr.length;
 }
@@ -55,6 +52,37 @@ export function formatWage(number: number) {
     minimumFractionDigits: 0,
     maximumFractionDigits: 0,
   }).format(number);
+}
+
+export function getPercentile(value: number, list: number[]): number {
+  // Handle edge cases
+  if (list.length === 0) {
+    throw new Error("List cannot be empty");
+  }
+
+  // Sort the list in ascending order
+  const sortedList = [...list].toSorted((a, b) => a - b);
+
+  // Count how many values are strictly less than the given value
+  let countBelow = 0;
+  // Count how many values are equal to the given value
+  let countEqual = 0;
+
+  for (const item of sortedList) {
+    if (item < value) {
+      countBelow++;
+    } else if (item === value) {
+      countEqual++;
+    } else {
+      break; // Since list is sorted, no need to continue
+    }
+  }
+
+  // Calculate percentile using the standard formula:
+  // Percentile = (countBelow + 0.5 * countEqual) / totalCount * 100
+  const percentile = ((countBelow + 0.5 * countEqual) / list.length) * 100;
+
+  return Math.round(percentile * 100) / 100;
 }
 
 export function sortIntoCohorts(numbers: number[]): {

@@ -31,7 +31,7 @@ export class CentralMidfilderProcessor {
       noInjuriesFilter: getFilters().noInjuriesFilter,
       minutes: getFilters().timePlayed,
       notEmptyFilter: (f: CentralMidfilder) => f.posessionWonPer90 > 0,
-      wageFilter: (d: CentralMidfilder) => d.wage <= 100000,
+      // wageFilter: (d: CentralMidfilder) => d.wage <= 100000,
       // ballRetention: (d: CentralMidfilder) =>
       //   d.posessionWonPer90 - d.posessionLostPer90 > 0,
       distanse: (d: CentralMidfilder) => d.distance > 12.5,

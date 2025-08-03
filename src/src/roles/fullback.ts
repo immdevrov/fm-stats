@@ -43,7 +43,7 @@ export class FullbackProcessor {
       tacklesRationFilter: (d: Fullback) => d.tackleRating >= 75,
       notEmptyFilter: (f: Fullback) =>
         f.progressivePassesPer90 > 0 || f.openSucessfullCrosses90 > 0,
-      wageFilter: (d: Fullback) => d.wage <= 100000,
+      // wageFilter: (d: Fullback) => d.wage <= 100000,
     };
 
     const filteredLeft = applyFilters(this.playersLeft, filterMap);

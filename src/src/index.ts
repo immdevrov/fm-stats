@@ -37,38 +37,41 @@ function main() {
     console.log(`Successfully loaded ${players.length} players`);
 
     const date = getCurrentDateFromFilePath(filePath);
-    console.log(date);
     // const alreadySignedForNextyear = players.filter((p) => [12092862].includes(p.UID));
     // const dateFilteredPlayers = players;
+    //
 
-    const dateFilteredPlayers = [
-      filterByContractExpiryDate({
-        players,
-        currentDate: date,
-        options: "SIX_MONTHS",
-      }),
-      // alreadySignedForNextyear,
-    ].flat();
+    const dateFilteredPlayers = players;
+    // const dateFilteredPlayers = [
+    //   filterByContractExpiryDate({
+    //     players,
+    //     currentDate: date,
+    //     options: "SIX_MONTHS",
+    //   }),
+    //   // alreadySignedForNextyear,
+    // ].flat();
+    //
+    // console.log(`${dateFilteredPlayers.length} players on short contract`);
 
-    console.log(`${dateFilteredPlayers.length} players on short contract`);
-
-    const cdProcessor = new CentralDefenderProcessor(dateFilteredPlayers);
-    const gkProcessor = new GoalKeeperProcessor(dateFilteredPlayers);
+    // const cdProcessor = new CentralDefenderProcessor(dateFilteredPlayers);
+    // const gkProcessor = new GoalKeeperProcessor(dateFilteredPlayers);
     const stProcessor = new StrikersProcessor(dateFilteredPlayers);
-    const fbProcessor = new FullbackProcessor(dateFilteredPlayers);
-    const wgProcessor = new WingerProcessor(dateFilteredPlayers);
-    const dmProcessor = new DefensiveMidfilderProcessor(dateFilteredPlayers);
-    const cmProcessor = new CentralMidfilderProcessor(dateFilteredPlayers);
-    const amProcessor = new AttackingMidfilderProcessor(dateFilteredPlayers);
+    // const fbProcessor = new FullbackProcessor(dateFilteredPlayers);
+    // const wgProcessor = new WingerProcessor(dateFilteredPlayers);
+    // const dmProcessor = new DefensiveMidfilderProcessor(dateFilteredPlayers);
+    // const cmProcessor = new CentralMidfilderProcessor(dateFilteredPlayers);
+    // const amProcessor = new AttackingMidfilderProcessor(dateFilteredPlayers);
 
-    gkProcessor.print(gkProcessor.filter());
-    dmProcessor.print(dmProcessor.filter());
-    cmProcessor.print(cmProcessor.filter());
-    cdProcessor.print(cdProcessor.filter());
-    wgProcessor.print(wgProcessor.filter());
-    stProcessor.print(stProcessor.filter());
-    fbProcessor.print(fbProcessor.filter());
-    amProcessor.print(amProcessor.filter());
+    // gkProcessor.print(gkProcessor.filter());
+    // cdProcessor.print(cdProcessor.filter());
+    // dmProcessor.print(dmProcessor.filter());
+    // cmProcessor.print(cmProcessor.filter());
+    // wgProcessor.print(wgProcessor.filter());
+    const filtered = stProcessor.filter();
+    stProcessor.print(filtered);
+    stProcessor.analize(filtered);
+    // fbProcessor.print(fbProcessor.filter());
+    // amProcessor.print(amProcessor.filter());
   } catch (error) {
     console.error("Error:", (error as Error).message);
     process.exit(1);

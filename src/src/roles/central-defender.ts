@@ -30,10 +30,10 @@ export class CentralDefenderProcessor {
       noInjuriesFilter: getFilters().noInjuriesFilter,
       minutes: getFilters().timePlayed,
       // noMistakesFilter: (d: CentralDefender) => d.mistakes <= 1,
-      headerRatioFilter: (d: CentralDefender) => d.headersWonRatio >= 60,
-      tacklesRationFilter: (d: CentralDefender) => d.tackleRating >= 75,
-      wageFilter: (d: CentralDefender) => d.wage <= 120000,
-      passing: (d: CentralDefender) => d.passesPercent >= 89,
+      headerRatioFilter: (d: CentralDefender) => d.headersWonRatio >= 70,
+      tacklesRationFilter: (d: CentralDefender) => d.tackleRating >= 85,
+      wageFilter: (d: CentralDefender) => d.wage <= 150000,
+      // passing: (d: CentralDefender) => d.passesPercent >= 89,
     });
 
     return filtered;

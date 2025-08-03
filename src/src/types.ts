@@ -28,6 +28,7 @@ export type Player = {
   xGOP: number;
   ShTPer90: number;
   ShotsOutsideBoxPer90: number;
+  goals90: number;
   NPxGPer90: number;
   GlMst: number;
   TckPer90: number;
@@ -50,6 +51,8 @@ export type Player = {
   Svp: number;
   Svh: number;
   xGPPer90: number;
+  exsvPercentage: number;
+  svPercentage: number;
 };
 
 export type Table<T extends Record<string, any>> = Array<T>;

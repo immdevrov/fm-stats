@@ -32,7 +32,6 @@ export function filterByContractExpiryDate(params: {
   options: Options;
 }) {
   const { currentDate, players, options } = params;
-  console.log(currentDate);
   const dateFn = expiresIn(currentDate, options);
   return players.filter((p) => {
     if (!p.Expires) {

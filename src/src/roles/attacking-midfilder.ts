@@ -31,7 +31,7 @@ export class AttackingMidfilderProcessor {
       notEmptyFilter: (f: AttackingMidfilder) =>
         f.progressivePassesPer90 > 0 && f.conv > 0,
       keyPases: (f: AttackingMidfilder) => f.keyPasses > 1.5,
-      wageFilter: (d: AttackingMidfilder) => d.wage <= 100000,
+      // wageFilter: (d: AttackingMidfilder) => d.wage <= 100000,
     });
 
     return filtered;

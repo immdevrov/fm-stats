@@ -7,6 +7,7 @@ export interface IRole {
   injuries: boolean;
   nat: string;
   wage: number;
+  division: string;
   contractExpires: Date | null;
 }
 
@@ -37,6 +38,10 @@ export abstract class Role implements IRole {
 
   get name() {
     return this.player.Name;
+  }
+
+  get division() {
+    return this.player.Division;
   }
 
   get contractExpires() {
