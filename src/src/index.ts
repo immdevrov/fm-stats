@@ -8,6 +8,7 @@ import { FullbackProcessor } from "./roles/fullback";
 import { GoalKeeperProcessor } from "./roles/goalkeeper";
 import { StrikersProcessor } from "./roles/striker";
 import { WingerProcessor } from "./roles/winger";
+import { arrayToCSV, saveCSVToFile } from "./save";
 
 function getCurrentDateFromFilePath(filePath: string) {
   const dateRegex = /(\d{2}_\d{2}_\d{4})\.csv$/;
@@ -22,7 +23,7 @@ function getCurrentDateFromFilePath(filePath: string) {
   return new Date(year, month - 1, day);
 }
 
-function main() {
+async function main() {
   try {
     // Get the file path from command line arguments
     const filePath = process.argv[2];
@@ -37,9 +38,6 @@ function main() {
     console.log(`Successfully loaded ${players.length} players`);
 
     const date = getCurrentDateFromFilePath(filePath);
-    // const alreadySignedForNextyear = players.filter((p) => [12092862].includes(p.UID));
-    // const dateFilteredPlayers = players;
-    //
 
     const dateFilteredPlayers = players;
     // const dateFilteredPlayers = [
@@ -68,8 +66,11 @@ function main() {
     // cmProcessor.print(cmProcessor.filter());
     // wgProcessor.print(wgProcessor.filter());
     const filtered = stProcessor.filter();
-    stProcessor.print(filtered);
-    stProcessor.analize(filtered);
+    const strikersAnalized = stProcessor.analize(filtered);
+    
+    const csvOutput = arrayToCSV(strikersAnalized);
+    await saveCSVToFile(csvOutput, 'players_analyzed.csv', './output');
+
     // fbProcessor.print(fbProcessor.filter());
     // amProcessor.print(amProcessor.filter());
   } catch (error) {

@@ -1,6 +1,7 @@
 import { getFilters } from "../filters";
-import { Player } from "../types";
+import { Player, KeyOfType } from "../types";
 import {
+  calculateArchetypes,
   displayDate,
   formatWage,
   getCohort,
@@ -26,15 +27,36 @@ interface IStriker extends IRole {
   tackles90: number;
   posWon90: number;
   keyPasses: number;
+  chancesCreated90: number;
 }
+
 
 export class StrikersProcessor {
   players: Striker[];
+  private ARHETYPE_NAMES = {
+    GOALSCORER: "goalscorer",
+    PRESSING_FORWARD: "pressing forward",
+    CREATOR: "creator",
+    TARGET_FORWARD: "target forward",
+    ADVANCED_FORWARD: "adwanced forward",
+  };
+
   constructor(players: Player[]) {
     const pl = players.filter(Striker.isRole);
 
     this.players = pl.map((p) => new Striker(p));
   }
+
+  get archetypes(): Record<string, KeyOfType<IStriker, number>[]>  {
+    return {
+      [this.ARHETYPE_NAMES.GOALSCORER]: ["conv", "shots90", "goals90"],
+      [this.ARHETYPE_NAMES.PRESSING_FORWARD]: ["pressures", "tackles90"],
+      [this.ARHETYPE_NAMES.CREATOR]: ["xA", "chancesCreated90"],
+      [this.ARHETYPE_NAMES.TARGET_FORWARD]: ["headersWonRatio"],
+      [this.ARHETYPE_NAMES.ADVANCED_FORWARD]: ["drbls", "keyPasses"],
+    }
+  }
+
 
   filter() {
     const filtered = applyFilters(this.players, {
@@ -49,41 +71,10 @@ export class StrikersProcessor {
     return filtered;
   }
 
-  analize(strikers: IStriker[]) {
-    // lets calculate arhetype badges
-    const PERCENTILE_TO_ACHIEVE_BADGE = 60;
-    const ARHETYPE_NAMES = {
-      GOALSCORER: "goalscorer",
-      PRESSING_FORWARD: "pressing forward",
-      CREATOR: "creator",
-    };
-    const arhetypes: Record<string, (keyof IStriker)[]> = {
-      [ARHETYPE_NAMES.GOALSCORER]: ["conv", "shots90", "goals90"],
-      [ARHETYPE_NAMES.PRESSING_FORWARD]: ["pressures", "tackles90", "posWon90"],
-    };
+  analize(strikers: Striker[]) {
+    const playersWithArhetype = calculateArchetypes(strikers, this.archetypes);
 
-    const playersWithArhetype = strikers.map((player) => {
-      const result: any = { uid: player.uid, name: player.name, badges: [] };
-
-      for (const [name, properties] of Object.entries(arhetypes)) {
-        let score: number = 0;
-        for (const prop of properties) {
-          const percentile = getPercentile(
-            player[prop] as number,
-            getColumn(strikers, prop) as number[]
-          );
-          result[prop] = percentile;
-          if (percentile >= PERCENTILE_TO_ACHIEVE_BADGE) {
-            score++;
-          }
-        }
-        if (score >= properties.length) {
-          result.badges.push(name);
-        }
-      }
-      return result;
-    });
-    printTable(playersWithArhetype);
+    return playersWithArhetype
   }
 
   print(strikers: Striker[]) {
@@ -134,62 +125,40 @@ export class StrikersProcessor {
 }
 
 export class Striker extends Role implements IStriker {
+  readonly goals90: number;
+  readonly headersWonRatio: number;
+  readonly arealAttempsPer90: number;
+  readonly xA: number;
+  readonly xgOP: number;
+  readonly npXG: number;
+  readonly shots90: number;
+  readonly conv: number;
+  readonly drbls: number;
+  readonly pressures: number;
+  readonly tackles90: number;
+  readonly posWon90: number;
+  readonly keyPasses: number;
+  readonly chancesCreated90: number;
+
   constructor(player: Player) {
     super(player);
+    this.goals90 = this.player.goals90;
+    this.headersWonRatio = this.player.HdrPercentage;
+    this.arealAttempsPer90 = this.player.AerAPer90;
+    this.xA = this.player.xAPer90;
+    this.xgOP = this.player.xGOP;
+    this.npXG = this.player.NPxGPer90;
+    this.shots90 = this.player.ShTPer90;
+    this.conv = this.player.ConvPercentage;
+    this.drbls = this.player.DrbPer90;
+    this.pressures = this.player.PresCPer90;
+    this.tackles90 = this.player.TckR;
+    this.posWon90 = this.player.PossWonPer90;
+    this.keyPasses = this.player.OPKPPer90;
+    this.chancesCreated90 = this.player.ChCPer90;
   }
 
   static isRole(player: Player): boolean {
     return player.Position.some((p) => p.type === "ST");
-  }
-
-  get goals90(): number {
-    return this.player.goals90;
-  }
-
-  get headersWonRatio() {
-    return this.player.HdrPercentage;
-  }
-
-  get arealAttempsPer90() {
-    return this.player.AerAPer90;
-  }
-  get xA() {
-    return this.player.xAPer90;
-  }
-
-  get xgOP() {
-    return this.player.xGOP;
-  }
-
-  get npXG() {
-    return this.player.NPxGPer90;
-  }
-
-  get shots90() {
-    return this.player.ShTPer90;
-  }
-
-  get conv() {
-    return this.player.ConvPercentage;
-  }
-
-  get drbls() {
-    return this.player.DrbPer90;
-  }
-
-  get pressures() {
-    return this.player.PresCPer90;
-  }
-
-  get tackles90() {
-    return this.player.TckR;
-  }
-
-  get posWon90() {
-    return this.player.PossWonPer90;
-  }
-
-  get keyPasses() {
-    return this.player.OPKPPer90;
   }
 }
