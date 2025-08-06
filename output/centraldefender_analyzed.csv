@@ -1,0 +1,752 @@
+name,uid,tackleRating,headersWonRatio,progressivePassesPer90,badges,ratingScores
+Rhys Owen,2000131036,94.07,92.54,88.62,aggressor;spreader,{"aggressor":93;"spreader":89}
+Joško Gvardiol,24060473,87.48,82.29,63.85,aggressor,{"aggressor":85}
+Nuno Mendes,83261910,66.78,19.17,99.13,spreader,{"spreader":99}
+Ronald Araujo,78085068,91.81,55.86,93.68,spreader,{"spreader":94}
+Cristian Romero,14130029,60.79,82.29,37.95,,{}
+Rúben Dias,55070299,18.71,48.27,29.29,,{}
+Levi Colwill,28124573,53.73,55.86,39.61,,{}
+Giorgio Scalvini,43500755,60.79,48.27,66.84,,{}
+Alan Petterson,2002074491,90.08,36.28,96.27,spreader,{"spreader":96}
+Reece James,28108035,22.97,7.86,52,,{}
+Jorrel Hato,2000105654,33.29,42.08,89.75,spreader,{"spreader":90}
+Marc Guéhi,28108033,66.78,39.08,36.28,,{}
+Ousmane Diomande,2000160511,60.79,84.62,98.34,spreader,{"spreader":98}
+Jurriën Timber,37063644,39.21,12.58,78.1,spreader,{"spreader":78}
+Jules Koundé,48036304,53.73,51.86,95.14,spreader,{"spreader":95}
+Sven Botman,37063649,39.21,30.03,78.1,spreader,{"spreader":78}
+Piero Hincapié,86066853,82.16,39.08,79.36,spreader,{"spreader":79}
+Nico Schlotterbeck,92088306,60.79,84.62,75.57,spreader,{"spreader":76}
+Ibrahima Konaté,48037822,33.29,99.6,58.66,,{}
+Micky van de Ven,37084591,39.21,65.05,84.29,spreader,{"spreader":84}
+Gonçalo Inácio,83228731,39.21,84.62,96.6,spreader,{"spreader":97}
+Filippo Mané,2000121585,82.16,82.29,97.27,aggressor;spreader,{"aggressor":82;"spreader":97}
+Willian Pacho,86075795,7.39,42.08,79.63,spreader,{"spreader":80}
+António Silva,83320135,9.72,68.64,68.51,,{}
+Castello Lukeba,49056273,53.73,45.07,31.29,,{}
+Vinicius,2002119900,76.43,82.29,67.24,aggressor,{"aggressor":79}
+Jakub Kiwior,96102946,28.1,79.43,82.82,spreader,{"spreader":83}
+Lorenzo Pirola,43425720,12.05,68.64,63.38,,{}
+Tanguy Nianzou,49048365,28.1,76.23,30.83,,{}
+Dayot Upamecano,16182894,28.1,39.08,61.85,,{}
+Cristhian Mosquera,2000030816,60.79,65.05,88.88,spreader,{"spreader":89}
+Benjamin White,29141472,46.27,25.1,81.36,spreader,{"spreader":81}
+Ibrahima Bamba,2000052247,33.29,36.28,87.28,spreader,{"spreader":87}
+Roger Ibañez,19337893,2.06,90.48,59.79,,{}
+Pau Torres,67217522,3.26,48.27,57.79,,{}
+Javlon Clement-Peter,2002075095,66.78,79.43,99.8,spreader,{"spreader":100}
+Illia Zabarnyi,71113679,4.53,51.86,13.65,,{}
+Josip Šutalo,24058106,46.27,60.59,17.24,,{}
+Takehiro Tomiyasu,45095490,66.78,27.3,48.07,,{}
+Eric García,28116427,12.05,36.28,52,,{}
+Victor Kristiansen,27161400,60.79,72.44,44.61,,{}
+Kauê,2002120044,22.97,76.23,95.27,spreader,{"spreader":95}
+Flavien-Enzo Boyomo,29219115,39.21,21.17,43.61,,{}
+Trevoh Chalobah,28103591,46.27,51.86,37.22,,{}
+Anel Ahmedhodžić,93064994,18.71,84.62,22.44,,{}
+Natan,19351985,79.29,36.28,64.91,,{}
+Perr Schuurs,37062161,46.27,51.86,96.07,spreader,{"spreader":96}
+Andrew Omobamidele,29218111,28.1,82.29,92.34,spreader,{"spreader":92}
+David Carmo,83111598,1.33,60.59,41.94,,{}
+Jean-Clair Todibo,48044499,33.29,68.64,51.07,,{}
+Nicolás Valentini,14241918,15.18,39.08,26.17,,{}
+Nathan Collins,28117372,53.73,48.27,85.82,spreader,{"spreader":86}
+Flavius Daniliuc,91172522,46.27,65.05,66.44,,{}
+Wesley Fofana,49037900,46.27,55.86,27.23,,{}
+Yassir Achahbar,2002072673,90.08,72.44,52.6,aggressor,{"aggressor":81}
+Callum Doyle,2000036812,72.1,68.64,92.88,spreader,{"spreader":93}
+Arthur Theate,18105815,18.71,51.86,48.47,,{}
+Josip Stanišić,91190673,72.1,60.59,72.5,spreader,{"spreader":73}
+Tomás Araújo,83243060,46.27,33.16,82.82,spreader,{"spreader":83}
+Shea Charles,2000027898,66.78,55.86,49.07,,{}
+Marc Cucurella,67215284,60.79,6.86,91.81,spreader,{"spreader":92}
+Dani Vivian,67256618,87.48,15.58,59.12,,{}
+Axel Disasi,48037291,39.21,30.03,91.01,spreader,{"spreader":91}
+Amadou Onana,91207274,66.78,72.44,87.82,spreader,{"spreader":88}
+Vanderlan,19398966,60.79,92.54,78.43,spreader,{"spreader":78}
+André,19375640,53.73,3.06,87.68,spreader,{"spreader":88}
+Odilon Kossounou,93127195,9.72,55.86,56.39,,{}
+Maxence Lacroix,49038271,66.78,86.82,15.91,,{}
+Nikita Petrov,2002102627,1.33,76.23,60.52,,{}
+Chadi Riad,2000058232,60.79,96.01,39.01,,{}
+Leo Østigård,53122155,84.89,22.97,88.35,spreader,{"spreader":88}
+Evan N'Dicka,48032198,60.79,36.28,68.11,,{}
+Marco Kana,18107452,60.79,17.11,95.47,spreader,{"spreader":95}
+Nikola Milenković,62191195,39.21,51.86,83.56,spreader,{"spreader":84}
+Kaiky,2000015032,9.72,45.07,85.42,spreader,{"spreader":85}
+Carlos Salazar,2002073199,53.73,84.62,33.75,,{}
+Pascal Struijk,37059452,90.08,51.86,46.21,,{}
+Kiliann Sildillia,49048381,53.73,51.86,94.47,spreader,{"spreader":94}
+Federico Gatti,43491384,79.29,48.27,81.96,spreader,{"spreader":82}
+Bruno Méndez,78089395,18.71,42.08,97.67,spreader,{"spreader":98}
+Leonardo,2002119923,46.27,5.73,84.09,spreader,{"spreader":84}
+Malang Sarr,48036830,72.1,15.58,97.14,spreader,{"spreader":97}
+Maxim Dekker,2000014084,18.71,22.97,86.48,spreader,{"spreader":86}
+Luís Cláudio,2002119920,46.27,19.17,78.43,spreader,{"spreader":78}
+Jeyson Rojas,2000050928,82.16,84.62,78.1,aggressor;spreader,{"aggressor":83;"spreader":78}
+Benoît Badiashile,49038942,46.27,98.4,54.19,,{}
+Leonardo Balerdi,14196664,76.43,42.08,48.07,,{}
+Alessandro Buongiorno,43270682,39.21,60.59,86.02,spreader,{"spreader":86}
+Ibrahim Mohammed,2000034631,28.1,88.75,80.03,spreader,{"spreader":80}
+Jordan Teze,37058008,46.27,42.08,76.96,spreader,{"spreader":77}
+Colin Penot,2002123982,53.73,84.62,95.67,spreader,{"spreader":96}
+Murillo,2000123482,22.97,65.05,75.97,spreader,{"spreader":76}
+Mads Møller,2002072806,82.16,42.08,96.74,spreader,{"spreader":97}
+Aurèle Amenda,84161623,39.21,76.23,53.13,,{}
+Éverson Zagallo,2002121486,72.1,94.54,79.63,aggressor;spreader,{"aggressor":83;"spreader":80}
+Ethan Ampadu,29175064,66.78,19.17,63.18,,{}
+Denner,2002098704,60.79,45.07,61.19,,{}
+José Marsà,67279755,39.21,42.08,91.21,spreader,{"spreader":91}
+Andrea Papetti,43425644,33.29,60.59,31.76,,{}
+Raphael Onyedika,27162493,15.18,25.1,88.62,spreader,{"spreader":89}
+Chris Richards,72051563,22.97,51.86,13.25,,{}
+Kevin Danso,91144914,39.21,79.43,46.74,,{}
+Ladislav Krejčí,25055083,15.18,48.27,54.53,,{}
+Paulo Fernández,2002122835,66.78,65.05,85.15,spreader,{"spreader":85}
+José Ángel Carmona,2000053930,79.29,55.86,42.28,,{}
+Danilho Doekhi,37051440,76.43,65.05,62.32,,{}
+Konstantinos Mavropanos,36116501,46.27,48.27,56.99,,{}
+Víctor Guzmán,51078642,87.48,11.45,36.62,,{}
+Albian Hajdari,84159608,72.1,55.86,37.62,,{}
+Lars Lukas Mai,91172528,3.26,76.23,10.99,,{}
+Kilian Fischer,91207901,53.73,65.05,91.21,spreader,{"spreader":91}
+Diogo Oliveira,2002123928,94.07,65.05,34.35,,{}
+Ethan Butera,2000127875,53.73,13.98,51.07,,{}
+Leandro Morgalla,2000100665,82.16,55.86,95.01,spreader,{"spreader":95}
+Daniel Ballard,28110835,95.94,65.05,69.84,,{}
+Jan Paul van Hecke,37076335,84.89,45.07,60.19,,{}
+Gustaf Lagerbielke,93084711,22.97,60.59,22.17,,{}
+Ladislav Mácha,2002103109,76.43,42.08,98.2,spreader,{"spreader":98}
+Rodrigo Cabral,2002075581,46.27,90.48,92.88,spreader,{"spreader":93}
+Vincent Tumber,2000280836,66.78,19.17,84.69,spreader,{"spreader":85}
+Dan-Axel Zagadou,48043086,0.2,76.23,8.12,,{}
+Armel Bella-Kotchap,92102718,18.71,60.59,38.55,,{}
+Alfred,2002073341,72.1,76.23,95.94,aggressor;spreader,{"aggressor":74;"spreader":96}
+El Chadaille Bitshiabu,2000100253,60.79,72.44,66.11,,{}
+Otávio,95081385,60.79,88.75,97.8,spreader,{"spreader":98}
+Ousmane Guèye,2002073858,22.97,60.59,89.95,spreader,{"spreader":90}
+Nathan Patterson,61083649,46.27,51.86,89.01,spreader,{"spreader":89}
+Yasin Özcan,2000204346,53.73,98.4,52.26,,{}
+Lennard Maloney,92092364,53.73,8.85,87.28,spreader,{"spreader":87}
+André Amaro,2000006906,82.16,55.86,71.11,spreader,{"spreader":71}
+Jorge Díaz,2000292912,76.43,55.86,93.14,spreader,{"spreader":93}
+Martin Vitík,2000014205,28.1,30.03,17.84,,{}
+Sebastián Cáceres,78089358,3.26,12.58,22.44,,{}
+Juan Miranda,67258411,53.73,55.86,75.7,spreader,{"spreader":76}
+Juanlu,2000027530,60.79,11.45,16.51,,{}
+Wilfried Singo,12078947,9.72,79.43,64.25,,{}
+Yukinari Sugawara,45111317,95.07,33.16,64.38,,{}
+Loïc Badé,49039789,9.72,42.08,23.9,,{}
+Matthew Cross,2002072423,3.26,92.54,47,,{}
+Calvin Bassey,28111079,33.29,48.27,64.65,,{}
+Jonathan Villagra,2000059106,28.1,36.28,8.85,,{}
+Mads Bech Sørensen,27114700,15.18,82.29,56.99,,{}
+Jhon Lucumí,76042952,33.29,15.58,80.29,spreader,{"spreader":80}
+Patryk Peda,96122121,33.29,92.54,31.29,,{}
+Owen Otasowie,29188478,79.29,42.08,11.98,,{}
+Tuta,19290884,33.29,68.64,77.56,spreader,{"spreader":78}
+Adrian Bajrami,83273689,46.27,79.43,52.86,,{}
+Arnau Martínez,2000062512,9.72,17.11,92.21,spreader,{"spreader":92}
+Martin Morrison,2002123144,22.97,65.05,10.99,,{}
+Jaka Bijol,62215974,46.27,86.82,56.99,,{}
+Tarek Buchmann,2000171001,39.21,90.48,66.25,,{}
+Alexsandro Ribeiro,83282675,53.73,55.86,77.83,spreader,{"spreader":78}
+Josh Doig,61093823,93.01,65.05,87.55,spreader,{"spreader":88}
+Eray Bulut,2002075142,76.43,13.98,49.73,,{}
+Raoul Bellanova,43295110,39.21,45.07,36.88,,{}
+Tomás Rayas,2002074268,72.1,51.86,61.85,,{}
+Tadeo Machado,2002074568,9.72,33.16,60.85,,{}
+Olivier Boscagli,48031641,46.27,45.07,45.47,,{}
+Renzo Malanca,14237982,28.1,55.86,39.01,,{}
+David Zima,25061896,22.97,96.01,35.95,,{}
+Alexandre Penetra,83228369,53.73,39.08,99,spreader,{"spreader":99}
+Eman Kospo,2000260079,66.78,25.1,47.4,,{}
+Josseph Rovira,2002074227,28.1,60.59,11.98,,{}
+Jarrad Branthwaite,29226000,72.1,96.01,94.74,aggressor;spreader,{"aggressor":84;"spreader":95}
+Nicolás Meriano,2000071315,94.07,76.23,99.4,aggressor;spreader,{"aggressor":85;"spreader":99}
+Gonçalo Simões,2002133569,90.08,60.59,95.81,spreader,{"spreader":96}
+Thomas Kristensen,2000005988,3.26,94.54,8.59,,{}
+Saba Sazonov,58154551,3.26,72.44,38.55,,{}
+Julian Chabot,91177332,72.1,82.29,30.09,aggressor,{"aggressor":77}
+Jonathan Dias,2002120027,76.43,90.48,73.24,aggressor;spreader,{"aggressor":83;"spreader":73}
+João Marcelo,2000022861,28.1,36.28,50.6,,{}
+Carlos Cuesta,76047487,66.78,72.44,8.99,,{}
+Logan Costa,49039003,7.39,36.28,51.6,,{}
+Hugo Guillamón,67258817,7.39,10.32,87.95,spreader,{"spreader":88}
+Santiago Rodríguez,2002146627,18.71,27.3,62.78,,{}
+Riccardo Calafiori,43424738,90.08,48.27,89.21,spreader,{"spreader":89}
+Bafodé Diakité,49038967,53.73,48.27,42.28,,{}
+Hjalmar Ekdal,93070264,33.29,30.03,20.44,,{}
+Arouna Sanganté,49062287,18.71,84.62,53.79,,{}
+Serdar Saatçı,2000038265,46.27,92.54,83.29,spreader,{"spreader":83}
+Borna Leutar,2000245750,53.73,48.27,74.17,spreader,{"spreader":74}
+Daniel Rodriguez,2002127445,22.97,25.1,9.45,,{}
+Aziz Ouattara,12090188,60.79,42.08,11.65,,{}
+Leandro Figueredo,14250633,79.29,88.75,30.49,aggressor,{"aggressor":84}
+David Brekalo,62203784,15.18,51.86,43.61,,{}
+Yannik Engelhardt,91194484,7.39,6.32,34.02,,{}
+Leopold Querfeld,16337125,3.26,96.01,27.23,,{}
+Chumi,95036003,53.73,65.05,30.49,,{}
+Igor,16199713,9.72,42.08,44.81,,{}
+Sérgio Monteiro Dutra,2002119851,22.97,39.08,69.51,,{}
+Felipe Loyola,75050238,7.39,17.11,15.71,,{}
+Moritz Jenz,29162924,53.73,42.08,51.07,,{}
+Fabio Chiarodia,2000116422,72.1,51.86,29.29,,{}
+Adrian Leon Barišić,24064014,33.29,27.3,34.95,,{}
+Emanuel Aiwu,16191306,12.05,60.59,29.03,,{}
+Nicolò Casale,43206174,84.89,17.11,46.21,,{}
+Kofi Balmer,52085051,72.1,25.1,19.51,,{}
+Sikou Niakaté,49037484,76.43,51.86,32.76,,{}
+Zinho Vanheusden,18091405,97.47,1.07,1,,{}
+Matteo Gabbia,43266774,94.07,55.86,71.97,spreader,{"spreader":72}
+Samuele di Benedetto,2000147150,18.71,3.26,84.49,spreader,{"spreader":84}
+Andreas Hermann,2002072330,87.48,45.07,80.03,spreader,{"spreader":80}
+Nehuén Pérez,14181374,22.97,84.62,66.84,,{}
+Mattia Viti,43426109,39.21,65.05,87.28,spreader,{"spreader":87}
+Brian Bjerregaard,2000197070,28.1,72.44,76.96,spreader,{"spreader":77}
+Osvaldo Vilches,2002121393,39.21,60.59,26.17,,{}
+Jiří Málek,2002126631,95.07,65.05,81.16,spreader,{"spreader":81}
+Đorđe Savić,2002103128,15.18,33.16,94.61,spreader,{"spreader":95}
+Chris Bennett,2002123237,22.97,42.08,24.17,,{}
+Merlin Röhl,91204520,22.97,48.27,9.99,,{}
+Caleb Okoli,43372285,76.43,79.43,18.18,aggressor,{"aggressor":78}
+Tommy St. Jago,37064140,33.29,60.59,81.56,spreader,{"spreader":82}
+Joel Ordóñez,2000033033,98.34,1.07,1,,{}
+Adryelson,19250021,66.78,10.32,10.72,,{}
+Moussa N'Diaye,12083698,87.48,17.11,21.97,,{}
+Anthony Rouault,49047179,4.53,48.27,41.28,,{}
+Ferney Lobatón,2002122832,15.18,19.17,15.18,,{}
+Gastón Ávila,14207518,84.89,39.08,34.95,,{}
+Bruno Valdez,14240705,60.79,10.32,75.97,spreader,{"spreader":76}
+Rune Bjørnådal,2000053091,60.79,98.4,53.99,,{}
+Óscar Mingueza,67245413,28.1,79.43,67.24,,{}
+Modibo Sagnan,48036568,60.79,42.08,86.28,spreader,{"spreader":86}
+John Bassey,2000103826,60.79,94.54,80.83,spreader,{"spreader":81}
+John Carlos Torijano,2002128828,66.78,30.03,63.58,,{}
+Valeriy Bondar,71093182,60.79,13.98,9.65,,{}
+Leo Fuhr Hjelde,29237773,76.43,76.23,48.47,aggressor,{"aggressor":76}
+Gabriel Moscardo,2000208439,66.78,60.59,44.61,,{}
+Oussama El Azzouzi,37076232,95.07,22.97,6.19,,{}
+Reece Strang,2002072349,76.43,22.97,71.37,spreader,{"spreader":71}
+Yonatan Laish,2000167416,87.48,86.82,6.06,aggressor,{"aggressor":87}
+Alessandro Circati,2000017415,28.1,39.08,63.38,,{}
+Konstantin Malsagov,2002142981,15.18,30.03,44.14,,{}
+Žan Jevšenak,83320134,28.1,60.59,26.9,,{}
+Sergio Sarmiento,2002120197,76.43,42.08,36.28,,{}
+Rafa Marín,2000051886,22.97,92.54,28.76,,{}
+Seydou Sano,2000243617,72.1,99.93,72.1,aggressor;spreader,{"aggressor":86;"spreader":72}
+Diego Coronel,2002127303,33.29,72.44,84.89,spreader,{"spreader":85}
+Sebastian Walukiewicz,96105337,18.71,68.64,40.41,,{}
+Bećir Omeragić,98046083,93.01,45.07,5.79,,{}
+Senne Lynen,18096574,93.01,1.07,1,,{}
+Biriba,2002121275,46.27,92.54,49.47,,{}
+Lee Han-Beom,2000082779,72.1,48.27,89.21,spreader,{"spreader":89}
+Stelios Andreou,2000098756,12.05,79.43,40.01,,{}
+Rubén Pulido,67277454,53.73,19.17,45.47,,{}
+Mujaid Sadick,67249928,46.27,22.97,33.42,,{}
+Sam Beukema,37063774,28.1,55.86,67.64,,{}
+Renan,19360964,76.43,42.08,96.47,spreader,{"spreader":96}
+Abdoulaye Ndiaye,12092872,5.59,79.43,19.04,,{}
+Petko Hristov,22064932,2.06,19.17,41.48,,{}
+Stefan Engblom,2002074831,28.1,25.1,72.84,spreader,{"spreader":73}
+Maxwell Gyamfi,92102719,46.27,60.59,9.25,,{}
+Edward Ryan,2002074264,7.39,88.75,82.36,spreader,{"spreader":82}
+Mehmet Fatih Cingirt,2002072781,79.29,11.45,80.29,spreader,{"spreader":80}
+Kike Salas,2000165617,53.73,60.59,70.24,spreader,{"spreader":70}
+Timothée Pembélé,49058792,60.79,51.86,90.21,spreader,{"spreader":90}
+Jackson Tchatchoua,18115949,22.97,4.06,39.61,,{}
+Ferdi Çolak,2002072713,22.97,65.05,39.61,,{}
+Beraldo,2000094252,87.48,22.97,68.51,,{}
+Ian Maatsen,28121372,82.16,5.73,29.03,,{}
+Killian Sardella,18107457,84.89,25.1,5.66,,{}
+Willy Kambwala,2000006158,39.21,90.48,58.26,,{}
+Serkan Arslan,2000059168,15.18,27.3,77.16,spreader,{"spreader":77}
+Ashley Phillips,2000137635,39.21,68.64,19.84,,{}
+Giannis Psycharis,2002144212,46.27,45.07,11.52,,{}
+Christian Osinaga,2000195390,82.16,4.86,14.31,,{}
+Davide Bettella,43316726,12.05,51.86,19.04,,{}
+Néider Bahoque,2000190931,39.21,5.33,74.43,spreader,{"spreader":74}
+Valentin Antov,22067326,46.27,79.43,32.76,,{}
+Colin Kleine-Bekel,2000065986,46.27,92.54,17.58,,{}
+Davis Bautista,2000235866,53.73,60.59,60.19,,{}
+Luca Kilian,91172547,60.79,76.23,90.55,spreader,{"spreader":91}
+Jake O'Brien,52101552,72.1,99.13,48.93,aggressor,{"aggressor":86}
+Ivan Turitsov,22072545,66.78,22.97,52.4,,{}
+Marcel Ratnik,62248917,72.1,86.82,50.07,aggressor,{"aggressor":79}
+Xavier Mbuyamba,37080993,28.1,90.48,52,,{}
+José Manuel Copete,67257035,84.89,68.64,59.12,,{}
+Márton Dárdai,91188481,7.39,6.32,80.83,spreader,{"spreader":81}
+Pau Cubarsí,2000296497,39.21,60.59,98.47,spreader,{"spreader":98}
+Bogdan Gliga,2002154024,22.97,21.17,34.95,,{}
+Joe Mendes,93123160,53.73,4.59,59.45,,{}
+Jesper Daland,53151383,93.01,30.03,7.39,,{}
+Maxime Estève,49060933,82.16,36.28,73.7,spreader,{"spreader":74}
+Charlie McArthur,2000126895,46.27,84.62,36.88,,{}
+Justin Hoogma,37059335,97.47,76.23,4.59,aggressor,{"aggressor":87}
+Mattes Hansen,2000065866,46.27,30.03,34.95,,{}
+Arnau Comas,67258409,5.59,55.86,63.85,,{}
+Beñat Prados,67277835,66.78,4.06,17.24,,{}
+Renato Veiga,83320123,53.73,13.98,32.16,,{}
+Sergi Domínguez,2000164535,28.1,48.27,62.32,,{}
+Maksim Paskotši,2000019993,15.18,39.08,12.65,,{}
+Brendan Dixon,2002074969,79.29,27.3,57.46,,{}
+Robert Renan,2000136297,72.1,76.23,83.95,aggressor;spreader,{"aggressor":74;"spreader":84}
+Luizão,19375644,39.21,97.27,93.48,spreader,{"spreader":93}
+Jaouen Hadjam,2000006105,72.1,82.29,86.02,aggressor;spreader,{"aggressor":77;"spreader":86}
+Ricardo Pereira,2000170574,46.27,3.73,62.98,,{}
+Ljubo Puljić,2000264596,53.73,99.6,26.7,,{}
+Bradley Locko,49059205,46.27,30.03,61.52,,{}
+Daniel Tal-Dan,2002133170,28.1,27.3,67.64,,{}
+Koni De Winter,18108550,90.08,88.75,9.45,aggressor,{"aggressor":89}
+Ronnie Edwards,29243820,5.59,72.44,93.94,spreader,{"spreader":94}
+Warmed Omari,49037825,28.1,72.44,59.99,,{}
+Josh Brooking,28124572,28.1,4.86,55.79,,{}
+Shawn Adewoye,18101866,66.78,51.86,39.61,,{}
+Stanley Nsoki,48043092,72.1,36.28,21.3,,{}
+Charlie Cresswell,29217875,12.05,90.48,36.28,,{}
+Nikola Vladinov,2000124384,60.79,60.59,20.11,,{}
+Matej Maglica,91202818,28.1,72.44,11.38,,{}
+Jean Hugonet,49056691,39.21,76.23,7.79,,{}
+Azamat Artisbek uulu,2002125074,60.79,88.75,8.72,,{}
+Alejandro Francés,67281886,66.78,22.97,83.02,spreader,{"spreader":83}
+Vitor,2002131779,82.16,79.43,90.55,aggressor;spreader,{"aggressor":81;"spreader":91}
+Bernardo Vital,83228407,84.89,48.27,14.45,,{}
+Jamie Lawrence,91205066,22.97,60.59,13.91,,{}
+Ramón Juárez,51078554,66.78,19.17,30.09,,{}
+Mert Müldür,16184687,39.21,15.58,61.19,,{}
+Joseph Okumu,20046877,95.94,65.05,4.06,,{}
+Héctor Fort,2000227977,22.97,7.26,54.53,,{}
+Darío Curbelo,2002122840,15.18,27.3,20.91,,{}
+Tim Oermann,2000070513,18.71,65.05,23.9,,{}
+Miroslav Ivanov,2000144679,5.59,17.11,40.81,,{}
+Lucas,2002120846,87.48,92.54,91.48,aggressor;spreader,{"aggressor":90;"spreader":91}
+Oskar Gawron,2002134796,53.73,55.86,31.76,,{}
+Ahmed Saad,2002126864,46.27,13.98,6.86,,{}
+Mika Faye,12088492,72.1,79.43,65.91,aggressor,{"aggressor":76}
+Álvaro Mantilla,2000040352,66.78,17.11,35.69,,{}
+Boy Kemper,37063646,60.79,30.03,90.81,spreader,{"spreader":91}
+Silvano Vos,2000046151,33.29,21.17,65.91,,{}
+Hari Jones,2000109682,53.73,72.44,70.77,spreader,{"spreader":71}
+Tomislav Papazov,22072957,90.08,68.64,39.61,,{}
+Connor Taylor,2000090196,22.97,96.01,17.58,,{}
+Francisco Flores,14217807,12.05,13.98,69.04,,{}
+Samuel Oum Gouet,13177223,98.93,1.07,1,,{}
+Moisés Mosquera,2000028404,87.48,65.05,73.44,spreader,{"spreader":73}
+Rafael Messias,2002073785,22.97,79.43,72.84,spreader,{"spreader":73}
+Taylor Harwood-Bellis,28120046,94.07,33.16,30.09,,{}
+Jorne Spileers,2000091517,99.2,1.07,1,,{}
+Ramon Hendriks,37065561,79.29,33.16,71.11,spreader,{"spreader":71}
+Carlos Garcés,2000151103,53.73,42.08,68.11,,{}
+Matías Gómez,2000243660,39.21,2.2,97.4,spreader,{"spreader":97}
+Ismaël Doukouré,2000016808,72.1,45.07,82.16,spreader,{"spreader":82}
+Fedde Leysen,18111492,95.94,1.07,2.06,,{}
+Madi Monamay,2000173959,4.53,48.27,56.39,,{}
+Jenson Seelt,37084995,90.08,84.62,41.01,aggressor,{"aggressor":87}
+Frank Boya,13177287,99.67,11.45,2.2,,{}
+Luan Patrick,19369124,60.79,82.29,52.86,,{}
+Nicolás Romero,2000007490,90.08,45.07,12.65,,{}
+Rodrigo Herrera,14229897,60.79,7.86,80.83,spreader,{"spreader":81}
+Ángel Barcia,2002073187,87.48,79.43,78.76,aggressor;spreader,{"aggressor":83;"spreader":79}
+Nuno Lima,2000013437,28.1,33.16,12.98,,{}
+Pedro Ganchas,83191310,22.97,86.82,42.68,,{}
+Marvel,2000126403,12.05,36.28,18.84,,{}
+Thierry Small,2000027029,93.01,48.27,26.9,,{}
+Jamil Siebert,91206955,33.29,60.59,57.79,,{}
+Marc Casadó,2000058198,1.33,2.4,23.57,,{}
+Siniša Milovanović,2002152906,39.21,98.4,86.28,spreader,{"spreader":86}
+Amado Corujas,2002123507,66.78,45.07,59.79,,{}
+Nikos Michelis,36146763,28.1,60.59,5.13,,{}
+Yannik Lührs,2000065951,15.18,51.86,15.18,,{}
+Chrislain Matsima,49048468,15.18,98.4,62.32,,{}
+Da Silva,2002120081,84.89,65.05,91.94,spreader,{"spreader":92}
+Facundo Garcés,14187538,46.27,39.08,79.16,spreader,{"spreader":79}
+Edgar Pujol,2000143033,94.07,3.46,16.51,,{}
+Gonzalo González,2000037510,7.39,48.27,54.53,,{}
+Brooke Norton-Cuffy,2000047226,46.27,22.97,62.98,,{}
+Abner,2002131782,99.67,82.29,98.6,aggressor;spreader,{"aggressor":91;"spreader":99}
+Mohamed Sabiri,2000109110,72.1,55.86,68.11,,{}
+Mauro Orefice,2002075288,66.78,72.44,91.48,spreader,{"spreader":91}
+Fabian Kunze,91182934,3.26,8.85,6.86,,{}
+Okba Mihoubi,2002154674,72.1,60.59,39.01,,{}
+Armando Obispo,37056071,9.72,48.27,71.77,spreader,{"spreader":72}
+Viery,2000255823,72.1,55.86,49.73,,{}
+Francisco Marco,2000095038,18.71,25.1,41.74,,{}
+Glauco,2002074152,79.29,79.43,99.53,aggressor;spreader,{"aggressor":79;"spreader":100}
+Rubén Cantero,2000124426,12.05,68.64,34.35,,{}
+Alessandro Fontanarosa,43500285,87.48,65.05,40.15,,{}
+Álvaro Cortés,2000214885,53.73,33.16,55.99,,{}
+Ignacio Durá,2002125841,4.53,65.05,43.28,,{}
+Koji Kawamura,2002123487,72.1,25.1,21.3,,{}
+Santiago Bueno,78076996,33.29,30.03,97.94,spreader,{"spreader":98}
+Kevin Mantilla,2000091178,15.18,86.82,64.51,,{}
+Wouter Goes,2000014086,5.59,72.44,35.95,,{}
+Miguel Nóbrega,83169857,60.79,27.3,74.17,spreader,{"spreader":74}
+Mamadou Sarr,2000107103,39.21,84.62,50.6,,{}
+Adrián Serrano,2002127305,91.81,90.48,71.37,aggressor;spreader,{"aggressor":91;"spreader":71}
+Artem Bulatov,2002161928,91.81,39.08,83.16,spreader,{"spreader":83}
+Antoine Mendy,2000130977,46.27,90.48,96.27,spreader,{"spreader":96}
+Liam Kitching,29174737,28.1,6.86,21.97,,{}
+Jonathan Serrano,2002145346,28.1,17.11,24.9,,{}
+Thomas Basila,48031575,90.08,12.58,3.79,,{}
+Carlo Volpes,2002144609,90.08,19.17,97.54,spreader,{"spreader":98}
+Abdul Sillah,2002073385,46.27,60.59,47.74,,{}
+Youri Baas,37076141,53.73,21.17,54.19,,{}
+Thuto Mojanaga,2000314468,79.29,15.58,35.69,,{}
+Joaquín Sosa,78099269,53.73,55.86,58.06,,{}
+Abdoulaye Sylla,48044086,96.67,84.62,3.13,aggressor,{"aggressor":91}
+Hicham El Ouali,2002154438,46.27,68.64,73.97,spreader,{"spreader":74}
+Charlie Row,2002120056,39.21,27.3,25.1,,{}
+Juan Barinaga,14221546,53.73,68.64,46.74,,{}
+Roger van de Pol,2002126210,76.43,33.16,69.17,,{}
+Joaquín Moreno,2002125976,60.79,3.46,69.31,,{}
+João Fonseca,2000199255,0.53,97.27,24.9,,{}
+Nathan Zeze,2000116383,3.26,97.27,28.16,,{}
+Max Geschwill,91190724,33.29,36.28,37.22,,{}
+Julián Malatini,14247879,46.27,30.03,92.88,spreader,{"spreader":93}
+Lucas Loss,2000272200,33.29,76.23,70.51,spreader,{"spreader":71}
+Cauan Soares,2002121249,18.71,39.08,59.45,,{}
+Yeremay Alonso,2002135528,66.78,7.46,77.3,spreader,{"spreader":77}
+Arthur Yamaguchi,2002120665,15.18,68.64,15.51,,{}
+Juan David Cabal,76064373,72.1,72.44,62.32,aggressor,{"aggressor":72}
+Pedro Paillalef,2000304638,60.79,48.27,57.46,,{}
+Syb van Ottele,37072832,7.39,17.11,50.33,,{}
+Jack Hinshelwood,2000124287,53.73,12.58,46.21,,{}
+Mario Gila,67277455,60.79,42.08,84.69,spreader,{"spreader":85}
+Archie Brown,29217603,66.78,96.01,55.46,,{}
+Jorge Herrando,67267209,12.05,72.44,27.56,,{}
+Ibrahim Digberekou,2000116656,33.29,84.62,27.23,,{}
+Tobías Palacio,2000272820,60.79,68.64,6.59,,{}
+Pablo Ortiz,2000006274,84.89,65.05,15.71,,{}
+Ignacio Galván,2000187724,0.07,72.44,88.15,spreader,{"spreader":88}
+Alberto Quintana,67280840,12.05,27.3,92.08,spreader,{"spreader":92}
+Tiago Barbosa,19367265,22.97,72.44,18.58,,{}
+Bastien Meupiyou,2000183492,46.27,86.82,89.48,spreader,{"spreader":89}
+Alan Mazzei,2002120088,53.73,33.16,89.48,spreader,{"spreader":89}
+Isaak Touré,2000006106,33.29,90.48,13.25,,{}
+Adlane Delaporte,2002073796,79.29,25.1,12.18,,{}
+Julinho dos Santos,2002099370,66.78,72.44,86.95,spreader,{"spreader":87}
+Felipe Rueda,2002136215,53.73,99.6,41.28,,{}
+Marcos Olguín,2000079313,46.27,5.33,58.66,,{}
+Joseda,67293813,53.73,11.45,58.66,,{}
+Paulo Vitor,2000166137,60.79,94.54,51.6,,{}
+Luís Gomes,2000108972,53.73,76.23,10.25,,{}
+Gustavo Martins,2000083129,53.73,82.29,65.51,,{}
+Sergio Pujol,2002124301,12.05,17.11,85.55,spreader,{"spreader":86}
+Emile Kondé,2000055180,94.07,2.86,3.66,,{}
+Kévin Mouanga,49053842,7.39,22.97,6.32,,{}
+Marco Moreno,67294772,60.79,15.58,26.5,,{}
+Danilo Veiga,83261126,76.43,48.27,48.47,,{}
+Kenneth Schmidt,91208024,84.89,76.23,94.34,aggressor;spreader,{"aggressor":81;"spreader":94}
+Hugo,2002132656,46.27,33.16,68.91,,{}
+Álvaro Guzmán,2002136529,53.73,76.23,23.57,,{}
+Mauro,2002074139,60.79,96.01,76.7,spreader,{"spreader":77}
+Siemen Voet,18101747,99.2,1.07,1,,{}
+Urko González de Zárate,2000058330,28.1,11.45,44.14,,{}
+Leonardo Mendicino,2000184409,39.21,72.44,43.01,,{}
+Tiago Djaló,83169969,87.48,60.59,70.24,spreader,{"spreader":70}
+Casper Widell,93140656,60.79,84.62,54.99,,{}
+Baptiste Roux,49046654,18.71,11.45,34.02,,{}
+Cas Odenthal,37064719,7.39,22.97,21.64,,{}
+Aarón Quiros,14221503,46.27,22.97,98.87,spreader,{"spreader":99}
+Valentín Fascendini,2000050072,87.48,65.05,19.24,,{}
+Arnau Solà,67296656,46.27,12.58,98.07,spreader,{"spreader":98}
+Marc Bombardó,2000294793,39.21,48.27,72.84,spreader,{"spreader":73}
+Juan Manuel,2002125973,46.27,92.54,44.14,,{}
+Matheus,2000136195,60.79,55.86,36.62,,{}
+Enoch Mastoras,2000126653,33.29,22.97,85.15,spreader,{"spreader":85}
+Álvaro Ocampo,2000200421,72.1,82.29,88.62,aggressor;spreader,{"aggressor":77;"spreader":89}
+Fabricio Santos,2002122854,18.71,45.07,75.03,spreader,{"spreader":75}
+Pablo Molina,2002136173,87.48,45.07,93.48,spreader,{"spreader":93}
+Franco Ortellado,14247648,72.1,82.29,54.99,aggressor,{"aggressor":77}
+Abou Ba,48031488,97.47,1.07,1,,{}
+Caine Wollerton,2002133512,22.97,39.08,7.52,,{}
+Jorge Martínez,2002074043,66.78,27.3,91.68,spreader,{"spreader":92}
+Raúl Prada,67297972,60.79,12.58,49.27,,{}
+Ben Phillips,2000040375,72.1,68.64,33.62,,{}
+Kayky Almeida,2000117762,4.53,33.16,10.45,,{}
+Jon Martín,2000229718,7.39,86.82,41.61,,{}
+Mateo Naranjo,2002074603,46.27,84.62,75.97,spreader,{"spreader":76}
+Wilgot Marshage,93151749,66.78,21.17,12.32,,{}
+João Dalla Corte,2000227264,76.43,27.3,86.62,spreader,{"spreader":87}
+Gonzalo Escudero,2000251840,82.16,36.28,90.81,spreader,{"spreader":91}
+Alan Kardec,2002131861,79.29,27.3,83.42,spreader,{"spreader":83}
+Patrick Enrici,43375373,72.1,13.98,34.95,,{}
+Fabio Saccon,2002154350,12.05,48.27,76.7,spreader,{"spreader":77}
+Diego Mastrángelo,14254708,72.1,30.03,76.23,spreader,{"spreader":76}
+Dani Ramos,2002101757,33.29,36.28,5.93,,{}
+Javier Presedo,2002136168,22.97,4.06,88.15,spreader,{"spreader":88}
+Giovanni Leoni,2000259904,66.78,45.07,13.25,,{}
+Francesco Furlan,2000165201,33.29,51.86,73.7,spreader,{"spreader":74}
+Santiago Ramos Mingo,14219093,95.07,76.23,12.45,aggressor,{"aggressor":86}
+Alan Riveros,2002105168,93.01,68.64,64.91,,{}
+Leny Yoro,2000182819,28.1,88.75,26.5,,{}
+Khoirul Saputra,2002072887,33.29,79.43,55.46,,{}
+José Roberto,2002075433,22.97,9.39,79.36,spreader,{"spreader":79}
+Tomás Lecanda,14223202,15.18,42.08,46.21,,{}
+Marcelo Melo,2002142668,76.43,68.64,90.21,spreader,{"spreader":90}
+Simone Canestrelli,43317665,22.97,94.54,58.66,,{}
+Giovanni Gambini,2002123861,15.18,25.1,59.45,,{}
+Rafael Fernandes,83261911,91.81,96.01,18.58,aggressor,{"aggressor":94}
+Vladimir Stojaković,2002124437,18.71,86.82,22.44,,{}
+Sergio Saizar,2002134436,66.78,48.27,93.81,spreader,{"spreader":94}
+Alberto Dossena,43202417,46.27,79.43,23.9,,{}
+Arthur Piedfort,2000122317,97.47,1.07,1,,{}
+Renzo Giampaoli,14201366,22.97,55.86,13.78,,{}
+Jamil Najjar,2000071245,22.97,65.05,49.27,,{}
+Victor Gabriel,2000085002,79.29,60.59,42.28,,{}
+Pietro Marocco,2002134328,18.71,96.01,53.46,,{}
+Tomás Benatti,2002120024,87.48,10.32,97,spreader,{"spreader":97}
+Serafino Bello,2002133562,53.73,79.43,33.42,,{}
+Rubén Zamora,2002126173,84.89,55.86,28.76,,{}
+Finn Dicke,2000040338,46.27,33.16,25.43,,{}
+Anderson,2002098449,2.06,79.43,43.01,,{}
+Maxwell Woledzi,27160150,99.67,1.07,1,,{}
+Pontus Texel,2000025157,79.29,36.28,58.06,,{}
+Juan Martini,2000299787,60.79,79.43,44.14,,{}
+Costanzo Heredia,2000206126,72.1,19.17,64.91,,{}
+Augusto López,2002146624,39.21,36.28,81.36,spreader,{"spreader":81}
+Kyllian Berthe,2002075464,60.79,68.64,42.68,,{}
+Tim Siersleben,91170080,60.79,36.28,11.78,,{}
+Robin Voisine,49053826,66.78,30.03,37.22,,{}
+Stuart Monaghan,2002074506,53.73,92.54,56.39,,{}
+José Luis,2002124486,22.97,33.16,34.02,,{}
+Marcelo,2002131983,9.72,39.08,99.93,spreader,{"spreader":100}
+Oliver Abildgaard,27093157,87.48,8.85,3.93,,{}
+Roy Leicester,2000228586,39.21,55.86,28.5,,{}
+Yiandro Raap,2000226974,15.18,27.3,78.76,spreader,{"spreader":79}
+Ezequiel Navarro,14196826,33.29,21.17,82.16,spreader,{"spreader":82}
+Nicolás Andrés Paz,14211016,46.27,19.17,12.85,,{}
+Marcelo Mendoza,2002127270,22.97,60.59,69.84,,{}
+Bas Nuijten,2002075262,39.21,27.3,95.47,spreader,{"spreader":95}
+Brian Aguilar,2000048810,5.59,72.44,45.47,,{}
+Matteo Dams,2000048586,98.34,1.07,1,,{}
+Wisdom Amey,2000097938,33.29,86.82,11.25,,{}
+Kev Muddyman,2000280474,53.73,55.86,76.36,spreader,{"spreader":76}
+Finn van Breemen,2000027407,84.89,22.97,21.3,,{}
+Jens Vermeuelen,2002072739,90.08,42.08,4.46,,{}
+Cléber,2002142733,82.16,55.86,85.15,spreader,{"spreader":85}
+Cristian Fidalgo,2002127554,82.16,72.44,79.03,aggressor;spreader,{"aggressor":77;"spreader":79}
+Kauã Vinícius,2000157575,22.97,65.05,20.44,,{}
+Anders Nøvik,2000049752,39.21,55.86,94.14,spreader,{"spreader":94}
+Felipe Sánchez,2000142821,60.79,55.86,25.77,,{}
+Kelvin Bueres,2002120482,9.72,82.29,89.75,spreader,{"spreader":90}
+Dylan Dassy,18111491,95.07,55.86,2.33,,{}
+Nuno Correia,2000183113,72.1,51.86,45.74,,{}
+Alessandro Pane,2002125935,39.21,99.13,16.11,,{}
+Luis Miguel Prada,2002102122,9.72,65.05,20.71,,{}
+Shadi Guillet,2000307456,98.34,19.17,2.86,,{}
+Eduardo,2002120200,99.67,96.01,77.56,aggressor;spreader,{"aggressor":98;"spreader":78}
+Santiago Flores,14227546,9.72,33.16,65.51,,{}
+Michael Clinton Opeyemi,2000124670,98.93,1.07,1,,{}
+Domenico Macchioni,2002135202,22.97,30.03,25.43,,{}
+Felipe Álvarez,2000240842,96.67,60.59,73.24,spreader,{"spreader":73}
+Paulo Roberto,2002120945,18.71,48.27,19.64,,{}
+João Pina,2002073793,18.71,55.86,30.83,,{}
+Franco Ayala,2000140967,7.39,88.75,50.07,,{}
+Lucas Bernabéu,2000200446,12.05,60.59,86.75,spreader,{"spreader":87}
+Maik Poeketie,2000235899,91.81,97.27,4.99,aggressor,{"aggressor":95}
+Loris Carannante,2002073453,87.48,92.54,5.39,aggressor,{"aggressor":90}
+Marco Borba,2002073401,12.05,92.54,24.3,,{}
+Patricio Pernicone,14222103,2.06,72.44,68.77,,{}
+Alejo Prado,2002146642,66.78,30.03,46.21,,{}
+Álex Alba,2000125132,39.21,15.58,21.77,,{}
+Ilyas Bouazzaoui,2000299242,72.1,12.58,10.99,,{}
+Fred,2002121247,93.01,10.32,67.04,,{}
+Rodrigo Nuzzolese,2002136250,66.78,25.1,65.51,,{}
+Diego van Zutphen,2000111576,60.79,25.1,13.52,,{}
+Floris Bos,2000226977,39.21,92.54,8.32,,{}
+Agustín Levi,2002074076,76.43,33.16,80.83,spreader,{"spreader":81}
+Jayden Candelaria,2000041895,79.29,45.07,92.48,spreader,{"spreader":92}
+Gum,2002142700,46.27,82.29,55.46,,{}
+Allan Delferrière,2000096301,97.47,1.07,1,,{}
+Guillem Víctor,2000297346,72.1,36.28,16.91,,{}
+German Staricco,2000311887,15.18,30.03,61.19,,{}
+Facundo González,2000176729,39.21,84.62,50.8,,{}
+Mads Lauritsen,2000140107,79.29,21.17,14.71,,{}
+Federico Monzón,2002146838,4.53,11.45,52.6,,{}
+Montolío,2000304911,0.73,55.86,15.18,,{}
+Zech Medley,28108037,84.89,15.58,10.59,,{}
+Emiliano Aguirre,2002128074,28.1,15.58,56.99,,{}
+Christian Dalle Mura,43424958,46.27,92.54,16.51,,{}
+Lasse Rosenboom,91187792,76.43,65.05,53.46,,{}
+Cristian Barros Schelotto,2002146846,87.48,5.99,63.85,,{}
+Adam Flint,2002145364,76.43,82.29,24.5,aggressor,{"aggressor":79}
+Carciano Barbato,2000135601,33.29,97.27,33.09,,{}
+Damián Fernández,14222102,90.08,7.86,83.75,spreader,{"spreader":84}
+Joaquín Pombo,2000066447,12.05,72.44,70.91,spreader,{"spreader":71}
+Ahmed Mounji,2002124638,39.21,30.03,48.8,,{}
+João Pereira,2000047621,28.1,15.58,10.25,,{}
+Luc Netten,2000046674,46.27,36.28,54.99,,{}
+João Silva,83111507,87.48,22.97,5.53,,{}
+Mamadou Faye,2002123061,46.27,42.08,75.17,spreader,{"spreader":75}
+Lukas Henriksen,2000156814,96.67,72.44,3.53,aggressor,{"aggressor":85}
+Fernando Ríos,2002156552,39.21,10.32,79.83,spreader,{"spreader":80}
+Samuel Koné,2002123065,39.21,86.82,25.77,,{}
+Kléber Bonjesus,2002152668,33.29,79.43,70.24,spreader,{"spreader":70}
+Rousimar Sestrem,2002152637,95.07,68.64,93.28,spreader,{"spreader":93}
+Dorian Teixeira,2002123636,46.27,72.44,40.41,,{}
+Luciano Campos,2000144496,53.73,45.07,65.18,,{}
+Enver Osmani,2002075163,1,60.59,5.26,,{}
+Bruno Palazzo,14224390,79.29,68.64,77.56,spreader,{"spreader":78}
+Jaime Vázquez,2000223081,12.05,92.54,30.83,,{}
+Hichem Belkacemi,2002073863,53.73,9.39,37.62,,{}
+Eduard Gonzi,2002153586,2.06,76.23,39.01,,{}
+Julio Cano,2002134914,15.18,86.82,24.7,,{}
+Samuel Lucero,2000118156,53.73,4.33,38.55,,{}
+Aldo Guerrini,2002144653,91.81,97.27,7.19,aggressor,{"aggressor":95}
+Ryan Barry,2002123391,82.16,15.58,25.77,,{}
+Gastón Parafita,2002136262,39.21,36.28,76.5,spreader,{"spreader":77}
+Julián Lonardi,2000041178,53.73,88.75,66.44,,{}
+Gaspar Aguilar,2002127732,18.71,27.3,72.37,spreader,{"spreader":72}
+Ricardo Rakotoharimalala,2002100293,15.18,86.82,23.17,,{}
+João Paulo,2002120677,7.39,36.28,32.76,,{}
+Bamo Meïté,2000018252,12.05,79.43,29.69,,{}
+Romão Chasqueira,14243750,46.27,60.59,60.52,,{}
+Levi Malungu,18115935,95.07,60.59,4.19,,{}
+Luquinhas,2002152765,33.29,98.4,31.76,,{}
+Federico Franco,2002074325,72.1,42.08,23.17,,{}
+Gonzalo Quinteros,2000249023,90.08,72.44,66.64,aggressor,{"aggressor":81}
+Demián Paone,2002136280,39.21,55.86,28.03,,{}
+Yasin Karabulut,2002133225,33.29,13.98,21.3,,{}
+Aaron Bouwman,2000269520,5.59,76.23,14.85,,{}
+Jarid Auger,2002103728,3.26,97.27,14.58,,{}
+Guilherme Reis,2002073882,28.1,94.54,48.47,,{}
+Marco Mazzei,2002126383,72.1,55.86,9.79,,{}
+Rafael Mota,2000268867,60.79,72.44,92.61,spreader,{"spreader":93}
+Juan Cruz Duarte,2002128099,7.39,92.54,43.61,,{}
+Alfredo Roquero,2000193221,22.97,39.08,86.95,spreader,{"spreader":87}
+Jochie de Gelder,2002073693,60.79,30.03,22.7,,{}
+Frederick Reuter,2000287924,15.18,60.59,38.22,,{}
+Daniel Caniparoli,2002134401,90.08,97.27,42.68,aggressor,{"aggressor":94}
+Juan Pablo Di Carlo,2002074609,66.78,19.17,31.29,,{}
+Maximilian Knoop,2002099594,28.1,15.58,20.44,,{}
+Nelson Abbey,29233999,39.21,22.97,25.23,,{}
+David Iribarren,2002134435,60.79,88.75,94.87,spreader,{"spreader":95}
+Filipe Destefano,2002120919,3.26,17.11,37.95,,{}
+Lucas Cano,2002128829,22.97,33.16,72.24,spreader,{"spreader":72}
+Gaetano Gargiulo,2002133693,39.21,94.54,7.79,,{}
+Miguel Benavídez,2002136255,87.48,88.75,29.69,aggressor,{"aggressor":88}
+Steyn Baas,2002133482,9.72,45.07,19.84,,{}
+Tomás Trancoso,2002124175,79.29,42.08,53.46,,{}
+Leonardo,2002131821,33.29,27.3,60.85,,{}
+André Santos,2002075081,87.48,88.75,20.91,aggressor,{"aggressor":88}
+Zoran Dukić,2002123100,39.21,33.16,33.22,,{}
+Ramiro Soperez,2000248635,7.39,25.1,74.77,spreader,{"spreader":75}
+Marley Felix,49062675,95.94,30.03,2.6,,{}
+Enrico Martelli,2002126011,18.71,8.39,56.39,,{}
+Jeffrey Boleij,2002126252,15.18,9.39,80.49,spreader,{"spreader":80}
+Ariel González,2000240540,15.18,4.46,75.37,spreader,{"spreader":75}
+Giorgio Cittadini,43424882,76.43,94.54,35.42,aggressor,{"aggressor":85}
+Ignacio Ponce,2002136702,97.47,98.4,44.14,aggressor,{"aggressor":98}
+Martín González,2002128270,22.97,51.86,65.51,,{}
+Glenn Stumpf,2002075443,53.73,36.28,51.33,,{}
+Marc,2002126612,28.1,68.64,35.42,,{}
+Sky Heesen,2000292364,46.27,27.3,81.69,spreader,{"spreader":82}
+Gustavo Albarracín,2000185733,28.1,4.86,94.14,spreader,{"spreader":94}
+Luís Henriques,2002073566,46.27,76.23,84.29,spreader,{"spreader":84}
+Zé Vitor,2000015324,28.1,79.43,32.16,,{}
+Hakan Goeminne,2002127043,98.34,39.08,3.26,,{}
+Dardo Torres,14207325,39.21,19.17,71.57,spreader,{"spreader":72}
+Tomás López,2000277235,33.29,55.86,75.37,spreader,{"spreader":75}
+Antonio Femenías,2002126279,39.21,94.54,18.18,,{}
+Odair José,2002120685,39.21,90.48,61.52,,{}
+Tobías Rubio,2000045678,84.89,19.17,69.51,,{}
+Nicolás Fernández,2000082728,90.08,10.32,49.73,,{}
+Leandro Borrelli,2002136540,60.79,92.54,56.39,,{}
+Frédéric Moser,2002123981,33.29,7.46,38.22,,{}
+Enzo Benítez,2000148350,18.71,48.27,83.75,spreader,{"spreader":84}
+Clebson Fernandes,2002131834,95.07,82.29,45.01,aggressor,{"aggressor":89}
+Guillermo Amaya,2002127459,18.71,33.16,57.46,,{}
+Nurettin Yeşilçay,2002099532,46.27,39.08,27.56,,{}
+Søren Kristoffersen,2002144224,95.94,48.27,4.33,,{}
+José Luís Català,2000116128,76.43,72.44,17.24,aggressor,{"aggressor":74}
+Anderson,2002152735,76.43,22.97,85.69,spreader,{"spreader":86}
+Yaël Thébault,2000289509,53.73,8.39,47.4,,{}
+Oumar N'Diaye,2002124612,60.79,33.16,45.21,,{}
+Márcio Silva,19382879,82.16,79.43,32.42,aggressor,{"aggressor":81}
+Aiman Souiri,29233083,93.01,6.32,3,,{}
+Leonel Nunes,2002073792,9.72,86.82,46.21,,{}
+Horacio Martínez,2002127267,66.78,9.39,98.74,spreader,{"spreader":99}
+Kevin Schlosser,2002073411,39.21,12.58,14.11,,{}
+Alejandro Villalba,2000049727,96.67,90.48,74.77,aggressor;spreader,{"aggressor":94;"spreader":75}
+Rafael Profini,2000108826,15.18,33.16,7.79,,{}
+Mathys Angely,2000301241,4.53,65.05,28.5,,{}
+Amund Midtgård,2002153556,33.29,48.27,20.11,,{}
+Gaetano Giannoccoli,2000268502,53.73,6.86,51.6,,{}
+Alessio Trimboli,2002102834,82.16,21.17,18.18,,{}
+Ahmet Kan,2002143928,33.29,72.44,34.55,,{}
+Youssif Dikeni,2000297453,2.06,98.4,47.4,,{}
+Martín,2002102105,82.16,39.08,45.01,,{}
+Evertow,2000273975,60.79,68.64,55.79,,{}
+Enzo Galván,2002164598,28.1,94.54,54.99,,{}
+Mark Verkuijl,2000179625,22.97,8.39,50.33,,{}
+Riley Rosada,2000294104,79.29,82.29,62.65,aggressor,{"aggressor":81}
+Durmuş Serbest,2000144473,22.97,90.48,23.17,,{}
+Tomás Maidana,2002127458,4.53,13.98,69.84,,{}
+Olufemi Offor,2002125112,39.21,30.03,8.46,,{}
+Jorge Alberto,2002120507,60.79,42.08,82.56,spreader,{"spreader":83}
+Román Suárez,2002074584,15.18,13.98,47,,{}
+Emanuel Silva,2002075326,7.39,12.58,29.49,,{}
+Richie Boks,2002144924,82.16,65.05,67.64,,{}
+Victão,2000197005,0.33,79.43,19.37,,{}
+Maximilian Laessig,2000125837,82.16,51.86,16.11,,{}
+Prince Winklaar,2002103970,53.73,25.1,6.46,,{}
+Laurin Fensel,2002125031,53.73,72.44,41.01,,{}
+Iván García,2002127366,18.71,65.05,32.76,,{}
+Maxime Soulas,37062674,98.34,1.07,1,,{}
+Rayan Atikallah,2000223688,7.39,2.73,14.11,,{}
+Ander Casado,2002103875,9.72,36.28,61.85,,{}
+Luca Raffin,2000254615,84.89,94.54,23.17,aggressor,{"aggressor":90}
+Joaquín Bustos,2002127400,5.59,9.39,64.11,,{}
+João Silva,2002123301,72.1,39.08,16.51,,{}
+Renzo Alberini,2002136289,66.78,3.06,60.52,,{}
+Lars Mølgaard,2002172125,96.67,97.27,2.46,aggressor,{"aggressor":97}
+Patrick Rothmann,2002104338,90.08,86.82,9.12,aggressor,{"aggressor":88}
+Karim Hiti,2002072870,33.29,33.16,16.91,,{}
+Samuel Pena,2002161075,18.71,30.03,90.21,spreader,{"spreader":90}
+Pedro Sousa,2002124019,66.78,33.16,40.41,,{}
+Francesco Scalini,2002144655,15.18,5.33,24.5,,{}
+Tomás Cardoso,2002133875,91.81,21.17,4.86,,{}
+Álex,2002163984,66.78,5.33,15.18,,{}
+Guido Benítez,2002146890,72.1,86.82,68.51,aggressor,{"aggressor":79}
+Albert Lodberg,2000303025,91.81,68.64,4.73,,{}
+Pasquale Lazzarini,2002126397,33.29,72.44,9.99,,{}
+Sulaiman Eze,2002099468,46.27,51.86,40.68,,{}
+Amidou Doumbouya,2000290350,82.16,76.23,47.4,aggressor,{"aggressor":79}
+Adam Andersen,2000150127,84.89,6.86,6.86,,{}
+Sergio Gómez,2002127351,66.78,42.08,31.29,,{}
+Djamel Abdallah,2002133465,12.05,2.6,26.17,,{}
+Matías Correa,2002146851,28.1,51.86,47.87,,{}
+Gerónimo Acevedo,2002156390,15.18,30.03,72.84,spreader,{"spreader":73}
+Diego Montes,2002146729,53.73,60.59,71.77,spreader,{"spreader":72}
+Ferran Seco,2000299720,33.29,13.98,30.09,,{}
+Lucas,2002170894,93.01,94.54,99.67,aggressor;spreader,{"aggressor":94;"spreader":100}
+Alan Sánchez,2002136212,53.73,5.99,74.77,spreader,{"spreader":75}
+Rodrigo Cabrera,2000114774,1.33,19.17,67.64,,{}
+Moudachirou Moussoro,2002073126,84.89,72.44,41.94,aggressor,{"aggressor":79}
+Togay Büyükekşi,2002155321,7.39,19.17,43.28,,{}
+Manuel,2002104583,91.81,76.23,53.79,aggressor,{"aggressor":84}
+Juan Cruz Cortazzo,2000261242,0.87,72.44,82.56,spreader,{"spreader":83}
+Alejandro,2002102426,46.27,3.73,28.3,,{}
+Emanuel Millán,2002156647,0.53,19.17,81.82,spreader,{"spreader":82}
+Alex Artaxo,2002122307,33.29,55.86,58.66,,{}
+Darío,2002163377,46.27,2.4,37.62,,{}
+Alex Sandro,2002161050,82.16,19.17,74.43,spreader,{"spreader":74}
+Luís Fernando,2002120914,76.43,51.86,18.58,,{}
+Ben Kromah,2002173730,82.16,21.17,78.76,spreader,{"spreader":79}
+Alexander Heredia,2002105032,72.1,19.17,73.7,spreader,{"spreader":74}
+Dininho,2002142749,82.16,6.86,99.27,spreader,{"spreader":99}
+Mamaye Traoré,2002145276,72.1,13.98,22.84,,{}
+Carlos Barbosa,2002173011,72.1,60.59,27.83,,{}
+Patrick,2000026367,98.34,1.07,1,,{}
+Luca Picco,2002192888,2.06,7.86,96.87,spreader,{"spreader":97}
+Gabriel Vareta,2000147323,22.97,88.75,8.12,,{}
+Gust Everaert,2002075494,98.34,99.13,3.4,aggressor,{"aggressor":99}
+Valentin Gendrey,49047752,28.1,8.39,32.16,,{}
+Patrick,2002171172,33.29,45.07,70.64,spreader,{"spreader":71}
+Magnus Gaunsbæk,2000135671,96.67,1.07,1,,{}
+Nicolás Correa,2002156298,82.16,10.32,27.83,,{}
+Alessandro Di Pinto,2002162277,53.73,10.32,17.84,,{}
+Gustav Bjerge,2000150201,99.67,99.6,2.73,aggressor,{"aggressor":100}
+Erdem Uyar,2002162286,53.73,33.16,53.13,,{}
+Arjen Robben,2002173699,87.48,65.05,7.19,,{}

@@ -1,6 +1,6 @@
 import { getFilters } from "../filters";
-import { Player } from "../types";
-import { displayDate, formatWage, printTable } from "../utils";
+import { KeyOfType, Player } from "../types";
+import { calculateArchetypes, displayDate, formatWage, printTable } from "../utils";
 import { applyFilters } from "./_filter";
 import { Role, IRole } from "./_role";
 
@@ -14,14 +14,30 @@ interface IAttackingMidfilder extends IRole {
   xA: number;
   conv: number;
   npXG: number;
+  chancesCreated: number;
 }
 
 export class AttackingMidfilderProcessor {
   players: AttackingMidfilder[];
+  private ARHETYPE_NAMES = {
+    ADVANCED_PLAYMAKER: "advanced playmaker",
+  };
   constructor(players: Player[]) {
     const pl = players.filter(AttackingMidfilder.isRole);
 
     this.players = pl.map((p) => new AttackingMidfilder(p));
+  }
+
+  get archetypes(): Record<string, KeyOfType<IAttackingMidfilder, number>[]> {
+    return {
+      [this.ARHETYPE_NAMES.ADVANCED_PLAYMAKER]: ["keyPasses", "chancesCreated", "npXG"],
+    };
+  }
+
+  analize(players: AttackingMidfilder[]) {
+    const playersWithArhetype = calculateArchetypes(players, this.archetypes);
+
+    return playersWithArhetype;
   }
 
   filter() {
@@ -74,49 +90,35 @@ export class AttackingMidfilderProcessor {
 }
 
 export class AttackingMidfilder extends Role implements IAttackingMidfilder {
+  readonly progressivePassesPer90: number;
+  readonly passesPercent: number;
+  readonly posessionWonPer90: number;
+  readonly posessionLostPer90: number;
+  readonly keyPasses: number;
+  readonly dribbles: number;
+  readonly xA: number;
+  readonly conv: number;
+  readonly npXG: number;
+  readonly chancesCreated: number;
+
   constructor(player: Player) {
     super(player);
+
+    this.progressivePassesPer90 = player.PrPassesPer90;
+    this.passesPercent = player.PasPercentage;
+    this.posessionWonPer90 = player.PossWonPer90;
+    this.posessionLostPer90 = player.PossLostPer90;
+    this.keyPasses = player.OPKPPer90;
+    this.dribbles = player.DrbPer90;
+    this.xA = player.xAPer90;
+    this.conv = player.ConvPercentage;
+    this.npXG = player.NPxGPer90;
+    this.chancesCreated = player.ChCPer90;
   }
 
   static isRole(player: Player): boolean {
     return player.Position.some(
       (p) => (p.type === "M" || p.type === "AM") && p.side?.includes("C")
     );
-  }
-
-  get progressivePassesPer90() {
-    return this.player.PrPassesPer90;
-  }
-
-  get passesPercent() {
-    return this.player.PasPercentage;
-  }
-
-  get posessionWonPer90() {
-    return this.player.PossWonPer90;
-  }
-
-  get posessionLostPer90() {
-    return this.player.PossLostPer90;
-  }
-
-  get keyPasses() {
-    return this.player.OPKPPer90;
-  }
-
-  get dribbles() {
-    return this.player.DrbPer90;
-  }
-
-  get xA() {
-    return this.player.xAPer90;
-  }
-
-  get conv() {
-    return this.player.ConvPercentage;
-  }
-
-  get npXG() {
-    return this.player.NPxGPer90;
   }
 }

@@ -1,6 +1,6 @@
 import { getFilters } from "../filters";
-import { Player } from "../types";
-import { displayDate, formatWage, printTable } from "../utils";
+import { KeyOfType, Player } from "../types";
+import { calculateArchetypes, displayDate, formatWage, printTable } from "../utils";
 import { applyFilters } from "./_filter";
 import { Role, IRole } from "./_role";
 
@@ -19,21 +19,33 @@ interface ICentralDefender extends IRole {
 
 export class CentralDefenderProcessor {
   players: CentralDefender[];
+
+  private ARHETYPE_NAMES = {
+    AGGRESSOR: "aggressor",
+    SPREADER: "spreader",
+  };
   constructor(players: Player[]) {
     const pl = players.filter(CentralDefender.isRole);
 
     this.players = pl.map((p) => new CentralDefender(p));
+  }
+  get archetypes(): Record<string, KeyOfType<ICentralDefender, number>[]> {
+    return {
+      [this.ARHETYPE_NAMES.AGGRESSOR]: ["tackleRating", "headersWonRatio"],
+      [this.ARHETYPE_NAMES.SPREADER]: ["progressivePassesPer90"],
+    };
+  }
+
+  analize(players: CentralDefender[]) {
+    const playersWithArhetype = calculateArchetypes(players, this.archetypes);
+
+    return playersWithArhetype;
   }
 
   filter() {
     const filtered = applyFilters(this.players, {
       noInjuriesFilter: getFilters().noInjuriesFilter,
       minutes: getFilters().timePlayed,
-      // noMistakesFilter: (d: CentralDefender) => d.mistakes <= 1,
-      headerRatioFilter: (d: CentralDefender) => d.headersWonRatio >= 70,
-      tacklesRationFilter: (d: CentralDefender) => d.tackleRating >= 85,
-      wageFilter: (d: CentralDefender) => d.wage <= 150000,
-      // passing: (d: CentralDefender) => d.passesPercent >= 89,
     });
 
     return filtered;
@@ -78,53 +90,34 @@ export class CentralDefenderProcessor {
     printTable(display);
   }
 }
-
 export class CentralDefender extends Role implements ICentralDefender {
+  readonly height: number;
+  readonly mistakes: number;
+  readonly tackleRating: number;
+  readonly progressivePassesPer90: number;
+  readonly passesPercent: number;
+  readonly tacklesPer90: number;
+  readonly headersWonRatio: number;
+  readonly arealAttempsPer90: number;
+  readonly posessionWonPer90: number;
+  readonly posessionLostPer90: number;
+
   constructor(player: Player) {
     super(player);
+
+    this.height = player.Height;
+    this.mistakes = player.GlMst;
+    this.tackleRating = player.TckR;
+    this.progressivePassesPer90 = player.PrPassesPer90;
+    this.passesPercent = player.PasPercentage;
+    this.tacklesPer90 = player.TckPer90;
+    this.headersWonRatio = player.HdrPercentage;
+    this.arealAttempsPer90 = player.AerAPer90;
+    this.posessionWonPer90 = player.PossWonPer90;
+    this.posessionLostPer90 = player.PossLostPer90;
   }
 
   static isRole(player: Player): boolean {
     return player.Position.some((p) => p.type === "D" && p.side?.includes("C"));
-  }
-
-  get height() {
-    return this.player.Height;
-  }
-
-  get mistakes() {
-    return this.player.GlMst;
-  }
-
-  get tackleRating() {
-    return this.player.TckR;
-  }
-
-  get progressivePassesPer90() {
-    return this.player.PrPassesPer90;
-  }
-
-  get passesPercent() {
-    return this.player.PasPercentage;
-  }
-
-  get tacklesPer90() {
-    return this.player.TckPer90;
-  }
-
-  get headersWonRatio() {
-    return this.player.HdrPercentage;
-  }
-
-  get arealAttempsPer90() {
-    return this.player.AerAPer90;
-  }
-
-  get posessionWonPer90() {
-    return this.player.PossWonPer90;
-  }
-
-  get posessionLostPer90() {
-    return this.player.PossLostPer90;
   }
 }

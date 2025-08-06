@@ -1,0 +1,259 @@
+[name: CentralDefenderProcessor] top aggressors
+[
+  { uid: 2000150201, name: 'Gustav Bjerge', score: 100 },
+  { uid: 2002075494, name: 'Gust Everaert', score: 99 },
+  { uid: 2002120200, name: 'Eduardo', score: 98 },
+  { uid: 2002136702, name: 'Ignacio Ponce', score: 98 },
+  { uid: 2002172125, name: 'Lars Mølgaard', score: 97 },
+  { uid: 2000235899, name: 'Maik Poeketie', score: 95 },
+  { uid: 2002144653, name: 'Aldo Guerrini', score: 95 },
+  { uid: 83261911, name: 'Rafael Fernandes', score: 94 },
+  { uid: 2002134401, name: 'Daniel Caniparoli', score: 94 },
+  { uid: 2000049727, name: 'Alejandro Villalba', score: 94 }
+]
+[name: CentralDefenderProcessor] top spreaders
+[
+  { uid: 2002075095, name: 'Javlon Clement-Peter', score: 100 },
+  { uid: 2002074152, name: 'Glauco', score: 100 },
+  { uid: 2002131983, name: 'Marcelo', score: 100 },
+  { uid: 2002170894, name: 'Lucas', score: 100 },
+  { uid: 83261910, name: 'Nuno Mendes', score: 99 },
+  { uid: 83228369, name: 'Alexandre Penetra', score: 99 },
+  { uid: 2000071315, name: 'Nicolás Meriano', score: 99 },
+  { uid: 2002131782, name: 'Abner', score: 99 },
+  { uid: 14221503, name: 'Aarón Quiros', score: 99 },
+  { uid: 2002127267, name: 'Horacio Martínez', score: 99 }
+]
+[name: GoalKeeperProcessor] top passers
+[ { uid: 28090964, name: 'Marek Rodák', score: 71 } ]
+[name: GoalKeeperProcessor] top shot stoppers
+[
+  { uid: 2002131836, name: 'Luís Felipe', score: 98 },
+  { uid: 2002075255, name: 'Jukka Kivimäki', score: 90 },
+  { uid: 2002180789, name: 'Ferreira', score: 89 },
+  { uid: 2000094510, name: 'Alberto Flores', score: 89 },
+  { uid: 2000062966, name: 'Kaique', score: 85 },
+  { uid: 78091927, name: 'Franco Israel', score: 84 },
+  { uid: 14226784, name: 'Sebastián Meza', score: 83 },
+  { uid: 27120988, name: 'Mads Hermansen', score: 82 },
+  { uid: 37076185, name: 'Tein Troost', score: 82 }
+]
+[name: StrikersProcessor] top pressing forwards
+[
+  { uid: 2002098863, name: 'Óscar Rosas', score: 98 },
+  { uid: 79034187, name: 'Julio Enciso', score: 97 },
+  { uid: 19362860, name: 'Talles Magno', score: 96 },
+  { uid: 2002072517, name: 'Flávio Cruz', score: 96 },
+  { uid: 27148020, name: 'Mohamed Daramy', score: 95 },
+  { uid: 28109599, name: 'Emile Smith Rowe', score: 94 },
+  { uid: 2002143835, name: 'Jesús Alberto Romero', score: 94 },
+  { uid: 2000272445, name: 'Asier Sanz', score: 94 },
+  { uid: 2002123584, name: 'Massimiliano Matta', score: 94 },
+  { uid: 28124579, name: 'Jamal Musiala', score: 93 }
+]
+[name: StrikersProcessor] top creators
+[
+  { uid: 19360961, name: 'Gabriel Silva', score: 100 },
+  { uid: 85139014, name: 'Kylian Mbappé', score: 99 },
+  { uid: 2000178997, name: 'Simone Pafundi', score: 99 },
+  { uid: 2000090211, name: 'Antonio Nusa', score: 99 },
+  { uid: 22086329, name: 'Marin Petkov', score: 99 },
+  { uid: 2000094562, name: 'Manuel Duarte', score: 99 },
+  { uid: 2002127306, name: 'Ezequiel Bordón', score: 99 },
+  { uid: 2000086446, name: 'Nathan Fernandes', score: 99 },
+  { uid: 2000035036, name: 'Alejandro Garnacho', score: 98 },
+  { uid: 49056279, name: 'Rayan Cherki', score: 98 }
+]
+[name: StrikersProcessor] top adwanced forwards
+[
+  { uid: 2000135788, name: 'Newertton', score: 99 },
+  { uid: 2002162272, name: 'Emiel De Vos', score: 99 },
+  { uid: 19302146, name: 'Vinícius Júnior', score: 98 },
+  { uid: 2002127306, name: 'Ezequiel Bordón', score: 98 },
+  { uid: 2000086446, name: 'Nathan Fernandes', score: 98 },
+  { uid: 2000090211, name: 'Antonio Nusa', score: 97 },
+  { uid: 2002124665, name: 'David Royo', score: 97 },
+  { uid: 19360961, name: 'Gabriel Silva', score: 97 },
+  { uid: 2000199219, name: 'Gonçalo Moreira', score: 96 },
+  { uid: 2000119309, name: 'Aimar Vicandi', score: 96 }
+]
+[name: StrikersProcessor] top goalscorers
+[
+  { uid: 2002073759, name: 'Atlas Cihan', score: 100 },
+  { uid: 43426136, name: 'Massimo Zilli', score: 98 },
+  { uid: 2000044526, name: 'José Manuel López', score: 97 },
+  { uid: 19326424, name: 'Yuri Alberto', score: 96 },
+  { uid: 14245238, name: 'Nicolás Pistone', score: 96 },
+  { uid: 48043873, name: 'Randal Kolo Muani', score: 95 },
+  { uid: 43424680, name: 'Nicholas Bonfanti', score: 95 },
+  { uid: 29179241, name: 'Erling Haaland', score: 94 },
+  { uid: 2000120742, name: 'Evan Ferguson', score: 94 },
+  { uid: 93122985, name: 'Amin Sarr', score: 94 }
+]
+[name: StrikersProcessor] top target forwards
+[
+  { uid: 2000090823, name: 'Matheus França', score: 99 },
+  { uid: 2002142981, name: 'Konstantin Malsagov', score: 98 },
+  { uid: 2002153689, name: 'Maik Kling', score: 98 },
+  { uid: 2000144735, name: 'Rudi Almeida', score: 97 },
+  { uid: 2000044526, name: 'José Manuel López', score: 96 },
+  { uid: 2000180828, name: 'Luca Raimund', score: 96 },
+  { uid: 2002122832, name: 'Ferney Lobatón', score: 94 },
+  { uid: 2002098863, name: 'Óscar Rosas', score: 94 },
+  { uid: 2002123085, name: 'Furkan Baş', score: 93 },
+  { uid: 2000016607, name: 'Harvey Vale', score: 93 }
+]
+[name: FullbackProcessor] top wide defenders
+[
+  { uid: 19340771, name: 'Luan Cândido', score: 97 },
+  { uid: 2000131036, name: 'Rhys Owen', score: 96 },
+  { uid: 2000136299, name: 'André', score: 95 },
+  { uid: 2002103951, name: 'Isidre', score: 91 },
+  { uid: 2000265960, name: 'Velibor Elesin', score: 91 },
+  { uid: 37084995, name: 'Jenson Seelt', score: 91 },
+  { uid: 2002120097, name: 'Bruno', score: 91 },
+  { uid: 2000050928, name: 'Jeyson Rojas', score: 90 },
+  { uid: 2000265960, name: 'Velibor Elesin', score: 89 },
+  { uid: 2002120097, name: 'Bruno', score: 89 }
+]
+[name: FullbackProcessor] top wing backs
+[
+  { uid: 2002136456, name: 'Ariel Sosa', score: 93 },
+  { uid: 2002142734, name: 'Jean Carlos', score: 93 },
+  { uid: 2002142708, name: 'Adão Pratesi', score: 93 },
+  { uid: 2002136456, name: 'Ariel Sosa', score: 92 },
+  { uid: 2002142734, name: 'Jean Carlos', score: 92 },
+  { uid: 91195878, name: 'Luca Netz', score: 91 },
+  { uid: 2000090753, name: 'Baltasar Barcia', score: 90 },
+  { uid: 2002120083, name: 'Riquelme', score: 89 },
+  { uid: 2000227269, name: 'Vitor Reis', score: 89 },
+  { uid: 53161610, name: 'Marcus Holmgren Pedersen', score: 88 }
+]
+[name: WingerProcessor] top wide playmakers
+[
+  { uid: 19360961, name: 'Gabriel Silva', score: 100 },
+  { uid: 2000252303, name: 'Kendry Páez', score: 99 },
+  { uid: 2000090211, name: 'Antonio Nusa', score: 99 },
+  { uid: 22086329, name: 'Marin Petkov', score: 99 },
+  { uid: 2000094562, name: 'Manuel Duarte', score: 99 },
+  { uid: 2000051171, name: 'Augusto Gallo', score: 99 },
+  { uid: 2002131819, name: 'Éverton', score: 99 },
+  { uid: 2000086446, name: 'Nathan Fernandes', score: 99 },
+  { uid: 2000252303, name: 'Kendry Páez', score: 99 },
+  { uid: 2000077193, name: 'Arda Güler', score: 99 }
+]
+[name: WingerProcessor] top wingers
+[
+  { uid: 2000279711, name: 'Yanis Issoufou', score: 96 },
+  { uid: 19302146, name: 'Vinícius Júnior', score: 95 },
+  { uid: 2000252303, name: 'Kendry Páez', score: 95 },
+  { uid: 2000252303, name: 'Kendry Páez', score: 95 },
+  { uid: 2000279711, name: 'Yanis Issoufou', score: 95 },
+  { uid: 2000090211, name: 'Antonio Nusa', score: 94 },
+  { uid: 2000051171, name: 'Augusto Gallo', score: 94 },
+  { uid: 2002131819, name: 'Éverton', score: 94 },
+  { uid: 2000086446, name: 'Nathan Fernandes', score: 94 },
+  { uid: 19302146, name: 'Vinícius Júnior', score: 94 }
+]
+[name: WingerProcessor] top insides
+[
+  { uid: 19360961, name: 'Gabriel Silva', score: 91 },
+  { uid: 2002162272, name: 'Emiel De Vos', score: 91 },
+  { uid: 19360961, name: 'Gabriel Silva', score: 91 },
+  { uid: 85139014, name: 'Kylian Mbappé', score: 89 },
+  { uid: 2000104450, name: 'Rodrigo Ribeiro', score: 89 },
+  { uid: 19406071, name: 'Nicolas', score: 89 },
+  { uid: 14245238, name: 'Nicolás Pistone', score: 89 },
+  { uid: 19406071, name: 'Nicolas', score: 89 },
+  { uid: 22086329, name: 'Marin Petkov', score: 88 },
+  { uid: 2002074650, name: 'Mateo Sequeira', score: 88 }
+]
+[name: DefensiveMidfilderProcessor] top anchors
+[
+  { uid: 2000296497, name: 'Pau Cubarsí', score: 98 },
+  { uid: 2002120024, name: 'Tomás Benatti', score: 98 },
+  { uid: 37062161, name: 'Perr Schuurs', score: 97 },
+  { uid: 78085068, name: 'Ronald Araujo', score: 96 },
+  { uid: 2002075095, name: 'Javlon Clement-Peter', score: 96 },
+  { uid: 2000292912, name: 'Jorge Díaz', score: 96 },
+  { uid: 29243820, name: 'Ronnie Edwards', score: 96 },
+  { uid: 2002120081, name: 'Da Silva', score: 96 },
+  { uid: 2002170894, name: 'Lucas', score: 96 },
+  { uid: 2000160511, name: 'Ousmane Diomande', score: 95 }
+]
+[name: DefensiveMidfilderProcessor] top deep playmakers
+[
+  { uid: 2002121522, name: 'Marcus', score: 87 },
+  { uid: 2000049752, name: 'Anders Nøvik', score: 87 },
+  { uid: 91187556, name: 'Leandro Barreiro', score: 86 },
+  { uid: 2000090823, name: 'Matheus França', score: 85 },
+  { uid: 2000192476, name: 'Bahia', score: 84 },
+  { uid: 67258817, name: 'Hugo Guillamón', score: 82 },
+  { uid: 2000059168, name: 'Serkan Arslan', score: 79 },
+  { uid: 2002156552, name: 'Fernando Ríos', score: 79 },
+  { uid: 19371031, name: 'João Gomes', score: 78 },
+  { uid: 2002127732, name: 'Gaspar Aguilar', score: 78 }
+]
+[name: DefensiveMidfilderProcessor] top destroyers
+[
+  { uid: 45111317, name: 'Yukinari Sugawara', score: 91 },
+  { uid: 43500245, name: 'Giovanni Fabbian', score: 91 },
+  { uid: 2002074074, name: 'Daniel Mancinelli', score: 90 },
+  { uid: 2000144735, name: 'Rudi Almeida', score: 89 },
+  { uid: 91208024, name: 'Kenneth Schmidt', score: 88 },
+  { uid: 2002134608, name: 'Aritz Bilbao', score: 87 },
+  { uid: 18111494, name: 'Arne Engels', score: 85 },
+  { uid: 2002074051, name: 'Jorge Machín', score: 81 },
+  { uid: 93151749, name: 'Wilgot Marshage', score: 79 }
+]
+[name: CentralMidfilderProcessor] top advanced playmakers
+[
+  { uid: 2000252303, name: 'Kendry Páez', score: 100 },
+  { uid: 14224724, name: 'Franco Watson', score: 99 },
+  { uid: 19360961, name: 'Gabriel Silva', score: 99 },
+  { uid: 28120042, name: 'Cole Palmer', score: 98 },
+  { uid: 2002074496, name: 'Elmar Guðlaugsson', score: 97 },
+  { uid: 2002135437, name: 'Davide Corelli', score: 97 },
+  { uid: 2002075154, name: 'Giuseppe Orlandi', score: 96 },
+  { uid: 2002136170, name: 'Benjamín Ocampo', score: 96 },
+  { uid: 19354891, name: 'Denilson', score: 96 },
+  { uid: 2002075420, name: 'Filippo Grassi', score: 96 }
+]
+[name: CentralMidfilderProcessor] top deep playmakers
+[
+  { uid: 2002121522, name: 'Marcus', score: 87 },
+  { uid: 2000049752, name: 'Anders Nøvik', score: 87 },
+  { uid: 91187556, name: 'Leandro Barreiro', score: 86 },
+  { uid: 2000090823, name: 'Matheus França', score: 85 },
+  { uid: 2000192476, name: 'Bahia', score: 84 },
+  { uid: 67258817, name: 'Hugo Guillamón', score: 82 },
+  { uid: 2000059168, name: 'Serkan Arslan', score: 79 },
+  { uid: 2002156552, name: 'Fernando Ríos', score: 79 },
+  { uid: 19371031, name: 'João Gomes', score: 78 },
+  { uid: 2002127732, name: 'Gaspar Aguilar', score: 78 }
+]
+[name: CentralMidfilderProcessor] top destroyers
+[
+  { uid: 45111317, name: 'Yukinari Sugawara', score: 91 },
+  { uid: 43500245, name: 'Giovanni Fabbian', score: 91 },
+  { uid: 2002074074, name: 'Daniel Mancinelli', score: 90 },
+  { uid: 2000144735, name: 'Rudi Almeida', score: 89 },
+  { uid: 91208024, name: 'Kenneth Schmidt', score: 88 },
+  { uid: 2002134608, name: 'Aritz Bilbao', score: 87 },
+  { uid: 18111494, name: 'Arne Engels', score: 85 },
+  { uid: 2002074051, name: 'Jorge Machín', score: 81 },
+  { uid: 93151749, name: 'Wilgot Marshage', score: 79 }
+]
+[name: AttackingMidfilderProcessor] top advanced playmakers
+[
+  { uid: 2000252303, name: 'Kendry Páez', score: 96 },
+  { uid: 2000178997, name: 'Simone Pafundi', score: 96 },
+  { uid: 19360961, name: 'Gabriel Silva', score: 96 },
+  { uid: 22086329, name: 'Marin Petkov', score: 95 },
+  { uid: 14224724, name: 'Franco Watson', score: 93 },
+  { uid: 19406071, name: 'Nicolas', score: 90 },
+  { uid: 28120042, name: 'Cole Palmer', score: 89 },
+  { uid: 2002074496, name: 'Elmar Guðlaugsson', score: 85 },
+  { uid: 2000204278, name: 'Luka Andrade', score: 83 },
+  { uid: 89056845, name: 'Ferran Torres', score: 82 }
+]

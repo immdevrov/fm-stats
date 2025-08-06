@@ -55,14 +55,20 @@ export function formatWage(number: number) {
   }).format(number);
 }
 
-export function calculateArchetypes<P extends IRole, NumberValues extends KeyOfType<P, number>, A extends Record<string, NumberValues[]>>(players: P[], archetypes: A) {
+export function calculateArchetypes<
+  P extends IRole,
+  NumberValues extends KeyOfType<P, number>,
+  A extends Record<string, NumberValues[]>,
+>(players: P[], archetypes: A) {
   const PERCENTILE_TO_ACHIEVE_BADGE = 70;
   return players.map((player) => {
     const result: Partial<Pick<P, NumberValues>> = {};
-    const badges: string[] = []
+    const badges: string[] = [];
+    const ratingScores: Record<string, number> = {};
 
     for (const [name, properties] of Object.entries(archetypes)) {
       let score: number = 0;
+      let rating: number = 0;
       for (const prop of properties) {
         const percentile = getPercentile(
           player[prop] as number,
@@ -70,16 +76,25 @@ export function calculateArchetypes<P extends IRole, NumberValues extends KeyOfT
         );
         // @ts-expect-error
         result[prop] = percentile;
+        rating += percentile;
         if (percentile >= PERCENTILE_TO_ACHIEVE_BADGE) {
           score++;
         }
       }
       if (score >= properties.length) {
+        const maxRating = score * 100;
+        ratingScores[name] = Math.round((rating / maxRating) * 100);
         badges.push(name);
       }
     }
 
-    return { name: player.name, uid: player.uid, ...result, badges };
+    return {
+      name: player.name,
+      uid: player.uid,
+      ...result,
+      badges,
+      ratingScores,
+    };
   });
 }
 

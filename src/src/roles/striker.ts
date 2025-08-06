@@ -6,7 +6,6 @@ import {
   formatWage,
   getCohort,
   getColumn,
-  getPercentile,
   printTable,
   sortIntoCohorts,
 } from "../utils";
@@ -28,8 +27,9 @@ interface IStriker extends IRole {
   posWon90: number;
   keyPasses: number;
   chancesCreated90: number;
+  keyHeaders: number;
+  ballRetention: number;
 }
-
 
 export class StrikersProcessor {
   players: Striker[];
@@ -47,16 +47,19 @@ export class StrikersProcessor {
     this.players = pl.map((p) => new Striker(p));
   }
 
-  get archetypes(): Record<string, KeyOfType<IStriker, number>[]>  {
+  get archetypes(): Record<string, KeyOfType<IStriker, number>[]> {
     return {
       [this.ARHETYPE_NAMES.GOALSCORER]: ["conv", "shots90", "goals90"],
       [this.ARHETYPE_NAMES.PRESSING_FORWARD]: ["pressures", "tackles90"],
       [this.ARHETYPE_NAMES.CREATOR]: ["xA", "chancesCreated90"],
-      [this.ARHETYPE_NAMES.TARGET_FORWARD]: ["headersWonRatio"],
+      [this.ARHETYPE_NAMES.TARGET_FORWARD]: [
+        "headersWonRatio",
+        "keyHeaders",
+        "ballRetention",
+      ],
       [this.ARHETYPE_NAMES.ADVANCED_FORWARD]: ["drbls", "keyPasses"],
-    }
+    };
   }
-
 
   filter() {
     const filtered = applyFilters(this.players, {
@@ -74,7 +77,7 @@ export class StrikersProcessor {
   analize(strikers: Striker[]) {
     const playersWithArhetype = calculateArchetypes(strikers, this.archetypes);
 
-    return playersWithArhetype
+    return playersWithArhetype;
   }
 
   print(strikers: Striker[]) {
@@ -139,6 +142,8 @@ export class Striker extends Role implements IStriker {
   readonly posWon90: number;
   readonly keyPasses: number;
   readonly chancesCreated90: number;
+  readonly keyHeaders: number;
+  readonly ballRetention: number;
 
   constructor(player: Player) {
     super(player);
@@ -156,6 +161,8 @@ export class Striker extends Role implements IStriker {
     this.posWon90 = this.player.PossWonPer90;
     this.keyPasses = this.player.OPKPPer90;
     this.chancesCreated90 = this.player.ChCPer90;
+    this.keyHeaders = this.player.KHdrsPer90;
+    this.ballRetention = this.posWon90 - this.player.PossLostPer90;
   }
 
   static isRole(player: Player): boolean {

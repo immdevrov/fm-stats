@@ -1,35 +1,45 @@
 import { getFilters } from "../filters";
-import type { Player, Table } from "../types";
+import type { KeyOfType, Player } from "../types";
 
-import { average, displayDate, formatWage, getColumn, printTable } from "../utils";
+import { calculateArchetypes, displayDate, formatWage, printTable } from "../utils";
 import { applyFilters } from "./_filter";
 import { IRole, Role } from "./_role";
 
 export class GoalKeeperProcessor {
   players: GoalKeeper[];
+
+  private ARHETYPE_NAMES = {
+    SHOT_STOPPER: "shot stopper",
+    PASSER: "passer",
+  };
+
   constructor(players: Player[]) {
     const pl = players.filter(GoalKeeper.isRole);
 
     this.players = pl.map((p) => new GoalKeeper(p));
   }
 
-  filter() {
-    const table = this.players satisfies Table<IGoalKeeper>;
-    const averageSavesHeld = average(getColumn(table, "savesHeldPercentage"));
+  get archetypes(): Record<string, KeyOfType<IGoalKeeper, number>[]> {
+    return {
+      [this.ARHETYPE_NAMES.SHOT_STOPPER]: [
+        "expectedSavesDiff",
+        "savesHeldPercentage",
+        "goalsPrevented90",
+      ],
+      [this.ARHETYPE_NAMES.PASSER]: ["passesAccuracy", "proggressivePasses"],
+    };
+  }
 
+  analize(players: GoalKeeper[]) {
+    const playersWithArhetype = calculateArchetypes(players, this.archetypes);
+
+    return playersWithArhetype;
+  }
+
+  filter() {
     const filteredPlayers = applyFilters(this.players, {
       noInjuriesFilter: getFilters().noInjuriesFilter,
       timePlayed: getFilters().timePlayed,
-      goodShotStoppers: (g: GoalKeeper) => g.goalsPrevented90 === "Good",
-      europian: (g: GoalKeeper) => !["ARG", "BRA"].includes(g.nat),
-      holdMostSaves: (g: GoalKeeper) => {
-        if (!averageSavesHeld) {
-          return true;
-        }
-        return g.savesHeldPercentage >= averageSavesHeld;
-      },
-      savesMoreThenExpected: (g: GoalKeeper) => g.expectedSavesDiff > 0,
-      mistakes: (g) => g.mistakes <= 1,
     });
     return filteredPlayers;
   }
@@ -72,55 +82,41 @@ export class GoalKeeperProcessor {
 
 export interface IGoalKeeper extends IRole {
   height: number;
-  goalsPrevented90: "Good" | "OK" | "Poor";
+  goalsPrevented90: number;
   mistakes: number;
   savesHeldPercentage: number;
   age: number;
   expectedSavesDiff: number;
+  passesAccuracy: number;
+  proggressivePasses: number;
 }
 export class GoalKeeper extends Role implements IGoalKeeper {
+  readonly height: number;
+  readonly goalsPrevented90: number;
+  readonly expectedSavesDiff: number;
+  readonly age: number;
+  readonly mistakes: number;
+  readonly savesHeldPercentage: number;
+  readonly passesAccuracy: number;
+  readonly proggressivePasses: number;
+
   constructor(player: Player) {
     super(player);
+
+    this.height = player.Height;
+    this.goalsPrevented90 = player.xGPPer90;
+    this.expectedSavesDiff = player.svPercentage - player.exsvPercentage;
+    this.age = player.Age;
+    this.mistakes = player.GlMst;
+    this.passesAccuracy = player.PasPercentage;
+    this.proggressivePasses = player.PrPassesPer90;
+
+    const saves = (player.Svh ?? 0) + (player.Svp ?? 0) + (player.Svt ?? 0);
+    this.savesHeldPercentage =
+      saves === 0 ? 0 : Math.round((player.Svh / saves + Number.EPSILON) * 100) / 100;
   }
 
   static isRole(player: Player): boolean {
     return player.Position.some((p) => p.type === "GK");
-  }
-
-  get height() {
-    return this.player.Height;
-  }
-
-  get goalsPrevented90(): "Good" | "OK" | "Poor" {
-    const gp = this.player.xGPPer90;
-    if (gp >= 0.25) {
-      return "Good";
-    }
-    if (gp < 0.2 && gp >= 0) {
-      return "OK";
-    }
-    return "Poor";
-  }
-
-  get expectedSavesDiff(): number {
-    const { svPercentage, exsvPercentage } = this.player;
-    return svPercentage - exsvPercentage;
-  }
-
-  get age(): number {
-    return this.player.Age;
-  }
-
-  get mistakes() {
-    return this.player.GlMst;
-  }
-
-  get savesHeldPercentage() {
-    const saves = this.player.Svh! + this.player.Svp! + this.player.Svt!;
-    if (saves === 0) {
-      return 0;
-    }
-    const svhp = this.player.Svh / saves;
-    return Math.round((svhp + Number.EPSILON) * 100) / 100;
   }
 }

@@ -9,6 +9,7 @@ import { GoalKeeperProcessor } from "./roles/goalkeeper";
 import { StrikersProcessor } from "./roles/striker";
 import { WingerProcessor } from "./roles/winger";
 import { arrayToCSV, saveCSVToFile } from "./save";
+import { printTable } from "./utils";
 
 function getCurrentDateFromFilePath(filePath: string) {
   const dateRegex = /(\d{2}_\d{2}_\d{4})\.csv$/;
@@ -51,28 +52,61 @@ async function main() {
     //
     // console.log(`${dateFilteredPlayers.length} players on short contract`);
 
-    // const cdProcessor = new CentralDefenderProcessor(dateFilteredPlayers);
-    // const gkProcessor = new GoalKeeperProcessor(dateFilteredPlayers);
-    const stProcessor = new StrikersProcessor(dateFilteredPlayers);
-    // const fbProcessor = new FullbackProcessor(dateFilteredPlayers);
-    // const wgProcessor = new WingerProcessor(dateFilteredPlayers);
-    // const dmProcessor = new DefensiveMidfilderProcessor(dateFilteredPlayers);
-    // const cmProcessor = new CentralMidfilderProcessor(dateFilteredPlayers);
-    // const amProcessor = new AttackingMidfilderProcessor(dateFilteredPlayers);
+    const constructors = [
+      CentralDefenderProcessor,
+      GoalKeeperProcessor,
+      StrikersProcessor,
+      FullbackProcessor,
+      WingerProcessor,
+      DefensiveMidfilderProcessor,
+      CentralMidfilderProcessor,
+      AttackingMidfilderProcessor,
+    ];
 
-    // gkProcessor.print(gkProcessor.filter());
-    // cdProcessor.print(cdProcessor.filter());
-    // dmProcessor.print(dmProcessor.filter());
-    // cmProcessor.print(cmProcessor.filter());
-    // wgProcessor.print(wgProcessor.filter());
-    const filtered = stProcessor.filter();
-    const strikersAnalized = stProcessor.analize(filtered);
-    
-    const csvOutput = arrayToCSV(strikersAnalized);
-    await saveCSVToFile(csvOutput, 'players_analyzed.csv', './output');
+    const processors = constructors.map((func) => new func(dateFilteredPlayers));
 
-    // fbProcessor.print(fbProcessor.filter());
-    // amProcessor.print(amProcessor.filter());
+    const analizedPromises = processors.map((processor) => {
+      const name: string = Object.getPrototypeOf(processor).constructor.name;
+      const filtered = processor.filter();
+      const analized = processor.analize(filtered as any);
+
+      const withBadges = analized.filter((p) => p.badges.length);
+      const groupedBadges = withBadges.reduce((prev: any, curr) => {
+        curr.badges.forEach((archetype) => {
+          if (!prev[archetype]) {
+            prev[archetype] = [
+              { uid: curr.uid, name: curr.name, score: curr.ratingScores[archetype] },
+            ];
+          } else {
+            prev[archetype].push({
+              uid: curr.uid,
+              name: curr.name,
+              score: curr.ratingScores[archetype],
+            });
+          }
+        });
+        return prev;
+      }, {});
+
+      Object.keys(groupedBadges).forEach((archetype) => {
+        const playersEvaluated = groupedBadges[archetype];
+        const sorted = playersEvaluated.toSorted(
+          (a: any, b: any) => Number(b.score) - Number(a.score)
+        );
+        const first10 = sorted.slice(0, 10);
+        console.log(`[name: ${name}] top ${archetype}s`);
+        console.log(first10);
+      });
+
+      // save all to csv
+      const csvOutput = arrayToCSV(analized);
+      return saveCSVToFile(
+        csvOutput,
+        `${name.toLowerCase()}_analyzed.csv`.replaceAll("processor", ""),
+        "./output"
+      );
+    });
+    await Promise.allSettled(analizedPromises);
   } catch (error) {
     console.error("Error:", (error as Error).message);
     process.exit(1);

@@ -1,6 +1,6 @@
 import { getFilters } from "../filters";
-import { Player } from "../types";
-import { displayDate, formatWage, printTable } from "../utils";
+import { KeyOfType, Player } from "../types";
+import { calculateArchetypes, displayDate, formatWage, printTable } from "../utils";
 import { applyFilters, filterMap } from "./_filter";
 import { Role, IRole } from "./_role";
 
@@ -14,6 +14,7 @@ interface IWinger extends IRole {
   successfullPressures90: number;
   openCrossesRatio: number;
   openSucessfullCrosses90: number;
+  chancesCreated: number;
   xA: number;
   keyPasses: number;
   dribbles: number;
@@ -24,6 +25,13 @@ interface IWinger extends IRole {
 export class WingerProcessor {
   playersLeft: LeftWinger[];
   playersRight: RightWinger[];
+
+  private ARHETYPE_NAMES = {
+    WINGER: "winger",
+    INSIDE: "inside",
+    WIDE_PLAYMAKER: "wide playmaker",
+  };
+
   constructor(players: Player[]) {
     const pl = players.filter(LeftWinger.isRole);
     const pr = players.filter(RightWinger.isRole);
@@ -32,16 +40,36 @@ export class WingerProcessor {
     this.playersRight = pr.map((p) => new RightWinger(p));
   }
 
+  get archetypes(): Record<string, KeyOfType<IWinger, number>[]> {
+    return {
+      [this.ARHETYPE_NAMES.WINGER]: [
+        "chancesCreated",
+        "openCrossesRatio",
+        "openSucessfullCrosses90",
+        "dribbles",
+      ],
+      [this.ARHETYPE_NAMES.INSIDE]: ["chancesCreated", "dribbles", "conv", "npXG"],
+      [this.ARHETYPE_NAMES.WIDE_PLAYMAKER]: ["keyPasses", "chancesCreated", "xA"],
+    };
+  }
+
+  analize(wingers: Array<LeftWinger | RightWinger>) {
+    const playersWithArhetypeLeft = calculateArchetypes(
+      wingers.filter((p) => p.side === "left"),
+      this.archetypes
+    );
+    const playersWithArhetypeRight = calculateArchetypes(
+      wingers.filter((p) => p.side === "right"),
+      this.archetypes
+    );
+
+    return [playersWithArhetypeLeft, playersWithArhetypeRight].flat();
+  }
+
   filter() {
     const filterMap: filterMap<Winger> = {
       noInjuriesFilter: getFilters().noInjuriesFilter,
       minutes: getFilters().timePlayed,
-      notEmptyFilter: (f: Winger) =>
-        f.progressivePassesPer90 > 0 || f.openSucessfullCrosses90 > 0,
-      wageFilter: (d: Winger) => d.wage <= 120000,
-      keyPassFilter: (d: Winger) => d.keyPasses > 1.2,
-      dribl: (d: Winger) => d.dribbles > 3,
-      creatorOrScorer: (d: Winger) => d.xA > 0.25 || d.conv > 15,
     };
 
     const filteredLeft = applyFilters(this.playersLeft, filterMap);
@@ -106,10 +134,43 @@ export class WingerProcessor {
     printTable(display);
   }
 }
+export class Winger extends Role implements IWinger {
+  readonly progressivePassesPer90: number;
+  readonly passesPercent: number;
+  readonly tacklesPer90: number;
+  readonly headersWonRatio: number;
+  readonly arealAttempsPer90: number;
+  readonly posessionWonPer90: number;
+  readonly posessionLostPer90: number;
+  readonly successfullPressures90: number;
+  readonly openCrossesRatio: number;
+  readonly openSucessfullCrosses90: number;
+  readonly xA: number;
+  readonly keyPasses: number;
+  readonly dribbles: number;
+  readonly npXG: number;
+  readonly conv: number;
+  readonly chancesCreated: number;
 
-class Winger extends Role implements IWinger {
   constructor(player: Player) {
     super(player);
+
+    this.progressivePassesPer90 = player.PrPassesPer90;
+    this.passesPercent = player.PasPercentage;
+    this.tacklesPer90 = player.TckPer90;
+    this.headersWonRatio = player.HdrPercentage;
+    this.arealAttempsPer90 = player.AerAPer90;
+    this.posessionWonPer90 = player.PossWonPer90;
+    this.posessionLostPer90 = player.PossLostPer90;
+    this.successfullPressures90 = player.PresCPer90;
+    this.openCrossesRatio = player.OPCrPercentage;
+    this.openSucessfullCrosses90 = player.OPCrsCPer90;
+    this.xA = player.xAPer90;
+    this.keyPasses = player.OPKPPer90;
+    this.dribbles = player.DrbPer90;
+    this.npXG = player.NPxGPer90;
+    this.conv = player.ConvPercentage;
+    this.chancesCreated = player.ChCPer90;
   }
 
   static isRole(player: Player): boolean {
@@ -118,66 +179,6 @@ class Winger extends Role implements IWinger {
         (p.type === "AM" || p.type === "M") &&
         (p.side?.includes("L") || p.side?.includes("R"))
     );
-  }
-
-  get progressivePassesPer90() {
-    return this.player.PrPassesPer90;
-  }
-
-  get passesPercent() {
-    return this.player.PasPercentage;
-  }
-
-  get tacklesPer90() {
-    return this.player.TckPer90;
-  }
-
-  get headersWonRatio() {
-    return this.player.HdrPercentage;
-  }
-
-  get arealAttempsPer90() {
-    return this.player.AerAPer90;
-  }
-
-  get posessionWonPer90() {
-    return this.player.PossWonPer90;
-  }
-
-  get posessionLostPer90() {
-    return this.player.PossLostPer90;
-  }
-
-  get successfullPressures90() {
-    return this.player.PresCPer90;
-  }
-
-  get openCrossesRatio() {
-    return this.player.OPCrPercentage;
-  }
-
-  get openSucessfullCrosses90() {
-    return this.player.OPCrsCPer90;
-  }
-
-  get xA() {
-    return this.player.xAPer90;
-  }
-
-  get keyPasses() {
-    return this.player.OPKPPer90;
-  }
-
-  get dribbles() {
-    return this.player.DrbPer90;
-  }
-
-  get npXG() {
-    return this.player.NPxGPer90;
-  }
-
-  get conv() {
-    return this.player.ConvPercentage;
   }
 }
 
